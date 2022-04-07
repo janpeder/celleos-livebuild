@@ -54,7 +54,7 @@ rm -rf $irdir
 #cp splash.png $cddir/isolinux
 #cp splash.png $cddir/boot/grub
 
-# Remove the check as they are no longer valid
+# Remove the checksums as they are no longer valid
 rm -f $cddir/sha256sum.txt
 rm -f $cddir/sha256sum.README
 rm -f $cddir/md5sum.txt
