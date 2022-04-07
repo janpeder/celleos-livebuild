@@ -1,0 +1,15 @@
+build-essential
+manpages-dev
+python3
+playonlinux
+default-jdk
+emacs
+task-gnome-desktop
+libreoffice
+vlc
+aisleriot
+scid
+stockfish
+audacity
+goldendict
+dict-freedict-*

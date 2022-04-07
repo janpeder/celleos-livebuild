@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Geogebra
+Comment=Geogebra 5 Classic
+Icon=/usr/share/pixmaps/geogebra.png
+Exec=/opt/GeoGebra-Linux-Portable-5-0-694-0/geogebra-portable
+Terminal=false
+Categories=Education
