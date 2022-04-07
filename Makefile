@@ -1,4 +1,4 @@
-# Makefile som bygger installasjonsmediet for celleos
+# Makefile building the installation media for celleos
 
 lbconfigparams = -a amd64 -b iso-hybrid --iso-application celleos --iso-preparer "Jan Peder David-Andersen" --iso-volume celleos-install --debian-installer live --archive-areas "main contrib" --win32-loader false --updates true
 builddir = build

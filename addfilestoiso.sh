@@ -20,7 +20,7 @@ lpdir=__loopdir__
 cddir=__cd__
 irdir=__irmod__
 
-# Kopier innhold fra eksisterende iso
+# Copy contents from existing ISO:
 mkdir $lpdir
 mount -o loop $iso $lpdir
 rm -rf $cddir
@@ -28,7 +28,7 @@ mkdir $cddir
 rsync -a -H --exclude=TRANS.TBL $lpdir/ $cddir
 umount $lpdir
 
-# Update initrd in install
+# Update initrd in install:
 mkdir $irdir
 cd $irdir
 gzip -d < ../$cddir/install/initrd.gz | \
@@ -39,7 +39,7 @@ find . | cpio -H newc --create | \
 cd ../
 rm -rf $irdir
 
-# Update initrd in install/gtk
+# Update initrd in install/gtk:
 mkdir $irdir
 cd $irdir
 gzip -d < ../$cddir/install/gtk/initrd.gz | \
@@ -50,18 +50,15 @@ find . | cpio -H newc --create | \
 cd ../
 rm -rf $irdir
 
-# Copy grub splash picture to the iso
+# Copy grub splash picture to the iso:
 #cp splash.png $cddir/isolinux
 #cp splash.png $cddir/boot/grub
 
-# Remove the sha-sums as they are no longer valid
+# Remove the check as they are no longer valid
 rm -f $cddir/sha256sum.txt
 rm -f $cddir/sha256sum.README
-
-# Fix checksum
-cd $cddir
-md5sum `find -follow -type f` > md5sum.txt
-cd ..
+rm -f $cddir/md5sum.txt
+rm -f $cddir/md5sum.README
 
 # Create iso
 genisoimage -o $output -r -J -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat ./$cddir
