@@ -1,4 +1,5 @@
 build-essential
+usbguard
 manpages-dev
 python3
 playonlinux
