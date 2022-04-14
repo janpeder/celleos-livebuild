@@ -40,6 +40,6 @@ The final step will be to write the file 'celleos-ISO-MBR.iso' to a USB stick. I
 ```
 dd if=build/celleos-ISO-MBR.iso of=/dev/sdb
 ```
-
+Writing the image to the USB stick takes some time, so be patient. Once the command has finished you may unplug the USB stick and you're done.
 
 Good luck!
