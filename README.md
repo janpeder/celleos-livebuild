@@ -25,9 +25,9 @@ Now 'cd' into the directory you just cloned:
 ```
 cd celleos-livebuild
 ```
-Run the script to download the geogebra files:
+Run the script to download various extra files (GeoGebra, Dash to Dock..):
 ```
-sh download_geogebra
+sh download_extras
 ```
 Start the build process by typing:
 ```
