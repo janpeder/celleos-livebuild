@@ -13,6 +13,7 @@ The following steps describes how to build a ISO image for installing celleos. Y
 
 First, install the required packages (as root):
 ```
+apt update
 apt install live-build genisoimage syslinux-utils git
 ```
 
@@ -35,6 +36,10 @@ make
 ```
 Now, cross your fingers and hope everything works out as intended. This step may take some 10 - 30 minutes time, as some serious downloading and processing will take place. If all goes well a 'build' directory will be created, and inside this directory you will find a file named 'celleos-ISO-MBR.iso'.
 
-The final step will be to write the file 'celleos-ISO-MBR.iso' to a USB stick. Personally, I prefer to use the command 'dd' for this.
+The final step will be to write the file 'celleos-ISO-MBR.iso' to a USB stick. Personally, I prefer to use the command 'dd' for this. Insert your USB stick. One way to find out the device file for the USB stick is by typing 'dmesg' in the terminal. To write the image to the stick, assuming the stick is /dev/sdb, type:
+```
+dd if=build/celleos-ISO-MBR.iso of=/dev/sdb
+```
+
 
 Good luck!
