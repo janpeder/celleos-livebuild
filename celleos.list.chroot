@@ -4,7 +4,6 @@ iptables
 manpages-dev
 info
 python3
-playonlinux
 default-jdk
 emacs
 task-gnome-desktop
