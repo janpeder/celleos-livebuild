@@ -2,6 +2,7 @@ build-essential
 usbguard
 iptables
 manpages-dev
+info
 python3
 playonlinux
 default-jdk
@@ -15,3 +16,4 @@ stockfish
 audacity
 goldendict
 dict-freedict-*
+gimp
