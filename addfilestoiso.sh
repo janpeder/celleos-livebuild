@@ -28,18 +28,6 @@ mkdir $cddir
 rsync -a -H --exclude=TRANS.TBL $lpdir/ $cddir
 umount $lpdir
 
-# Update initrd in install:
-# Don't think the initrd in install is used - uncomment if I am wrong:
-#mkdir $irdir
-#cd $irdir
-#gzip -d < ../$cddir/install/initrd.gz | \
-#    cpio --extract --make-directories --no-absolute-filenames
-#cp ../$preseed preseed.cfg
-#find . | cpio -H newc --create | \
-#    gzip -9 > ../$cddir/install/initrd.gz
-#cd ../
-#rm -rf $irdir
-
 # Update initrd in install/gtk:
 # This is the initrd which is loaded when choosing to install from the grub menu on the installation media
 mkdir $irdir
@@ -52,9 +40,10 @@ find . | cpio -H newc --create | \
 cd ../
 rm -rf $irdir
 
-# Copy grub splash picture to the iso:
-#cp splash.png $cddir/isolinux
-#cp splash.png $cddir/boot/grub
+# Backup /isolinux/menu.cfg and write a modified one:
+cp $cddir/isolinux/menu.cfg $cddir/isolinux/menu.cfg.old
+cp menu.cfg $cddir/isolinux/menu.cfg
+cp splash.png $cddir/isolinux/
 
 # Remove the checksums as they are no longer valid
 rm -f $cddir/sha256sum.txt
