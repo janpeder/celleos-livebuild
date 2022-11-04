@@ -40,10 +40,20 @@ find . | cpio -H newc --create | \
 cd ../
 rm -rf $irdir
 
+# Create efiboot.img
+dd if=/dev/zero of=$cddir/efiboot.img bs=1M count=10
+mkfs.vfat $cddir/efiboot.img
+LC_CTYPE=C mmd -i $cddir/efiboot.img efi efi/boot
+LC_CTYPE=C mcopy -i $cddir/efiboot.img $cddir/EFI/boot/bootx64.efi ::efi/boot
+LC_CTYPE=C mcopy -i $cddir/efiboot.img $cddir/EFI/boot/grubx64.efi ::efi/boot
+
 # Backup /isolinux/menu.cfg and write a modified one:
 cp $cddir/isolinux/menu.cfg $cddir/isolinux/menu.cfg.old
 cp menu.cfg $cddir/isolinux/menu.cfg
+cp $cddir/boot/grub/grub.cfg $cddir/boot/grub/grub.cfg.old
+cp grub.cfg $cddir/boot/grub/grub.cfg
 cp splash.png $cddir/isolinux/
+cp splash.png $cddir/boot/grub/
 
 # Remove the checksums as they are no longer valid
 rm -f $cddir/sha256sum.txt
@@ -52,11 +62,11 @@ rm -f $cddir/md5sum.txt
 rm -f $cddir/md5sum.README
 
 # Create iso
-genisoimage -o $output -r -J -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat ./$cddir
+genisoimage -o $output -r -J -T -V "celleos-install" -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat -eltorito-alt-boot -e efiboot.img -no-emul-boot ./$cddir
 
 # Make it a bootable disk image
 # (If we dont do this it will only be bootable if burned to a physical CD)
-isohybrid $output
+isohybrid --uefi $output
 
 # Clean up
 rm -rf $lpdir
