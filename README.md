@@ -34,12 +34,16 @@ Start the build process by typing:
 ```
 make
 ```
-Now, cross your fingers and hope everything works out as intended. This step may take some 10 - 30 minutes time, as some serious downloading and processing will take place. If all goes well a 'build' directory will be created, and inside this directory you will find a file named 'celleos-ISO-MBR.iso'.
+This step may take some time - perhaps 10 - 30 minutes. This is because a lot of data packages will be downloaded and processed. If all goes well a 'build' directory will be created, and inside this directory you will find a file named 'celleos.iso'.
 
-The final step will be to write the file 'celleos-ISO-MBR.iso' to a USB stick. I prefer to use the command 'dd' for this. Before we can write the image, we need to know the device file for the USB stick. One way to find the correct device file is by typing 'dmesg' in the terminal just after plugging the USB stick into the computer. To write the image to the stick, assuming the stick is /dev/sdb, type:
+The final step will be to write the file 'celleos.iso' to a USB stick. I prefer to use the command 'dd' for this. Before we can write the image, we need to know the device file for the USB stick. One way to find the correct device file is by typing 'dmesg' in the terminal just after plugging the USB stick into the computer. To write the image to the stick, assuming the stick is /dev/sdb, type:
 ```
-dd if=build/celleos-ISO-MBR.iso of=/dev/sdb
+dd if=build/celleos.iso of=/dev/sdb bs=4M
 ```
-Writing the image to the USB stick takes some time, so be patient. Once the command has finished you may unplug the USB stick and you're done.
+Writing the image to the USB stick takes some time, so be patient. When it is done, type
+```
+sync
+```
+and remove the USB stick.
 
 Good luck!
