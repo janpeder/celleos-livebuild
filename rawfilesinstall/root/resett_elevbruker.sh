@@ -7,6 +7,7 @@ case "$response" in
 	tar xf /root/backup_elevhome.tar -C /
 	chown -R elev /home/elev
 	chgrp -R elev /home/elev
+	passwd -u -d elev
 	echo "Elevbruker er nullstilt."
         ;;
     *)
