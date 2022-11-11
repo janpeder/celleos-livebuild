@@ -1,0 +1,5 @@
+[org/gnome/desktop/background]
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
+picture-options='zoom'
+primary-color='#3465a4'
+secondary-color='#000000'

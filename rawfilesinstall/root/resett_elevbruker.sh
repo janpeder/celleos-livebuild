@@ -4,9 +4,10 @@ read -r -p "Elevbruker vil bli nullstilt. Sikker? \"J\" for å fortsette [J/N] "
 case "$response" in
     [jJ]) 
 	rm -rf /home/elev
-	tar xf /root/backup_elevhome.tar -C /
+	cp -R /etc/skel /home/elev
 	chown -R elev /home/elev
 	chgrp -R elev /home/elev
+	chmod -R 755 /home/elev
 	passwd -u -d elev
 	echo "Elevbruker er nullstilt."
         ;;

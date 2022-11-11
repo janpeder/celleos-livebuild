@@ -3,3 +3,4 @@
 rawfilesinstall/opt/geogebra/
 rawfilesinstall/home/elev/.local/share/gnome-shell/
 build/
+rawfilesinstall/etc/skel/.config/dconf/user
