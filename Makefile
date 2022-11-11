@@ -22,7 +22,7 @@ $(builddir)/$(builtisoname): $(builddir)/configured_date
 $(builddir)/$(modifiedisoname): $(builddir)/$(builtisoname) addfilestoiso.sh preseed.cfg
 	sh addfilestoiso.sh $(builddir)/$(builtisoname) $(builddir)/$(modifiedisoname)
 
-rawfilesinstall/etc/skel/.config/dconf/user: dconfsettings.d/dashtodocksettings dconfsettings.d/desktopbackgroundsettings
+rawfilesinstall/etc/skel/.config/dconf/user: dconfsettings.d/dashtodocksettings dconfsettings.d/desktopbackgroundsettings dconfsettings.d/favoriteappssettings
 	mkdir -p rawfilesinstall/etc/skel/.config/dconf
 	dconf compile rawfilesinstall/etc/skel/.config/dconf/user dconfsettings.d
 
