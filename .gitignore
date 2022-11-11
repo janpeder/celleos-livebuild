@@ -1,6 +1,7 @@
 *~
 *#
 rawfilesinstall/opt/geogebra/
-rawfilesinstall/home/elev/.local/share/gnome-shell/
+rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/
 build/
 rawfilesinstall/etc/skel/.config/dconf/user
+rawfilesinstall/usr/share/pixmaps/geogebra.png
