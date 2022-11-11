@@ -7,7 +7,7 @@ modifiedisoname = celleos.iso
 
 default: $(builddir)/$(modifiedisoname)
 
-$(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot
+$(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot rawfilesinstall/etc/skel/.config/dconf/user
 	lb clean
 	mkdir -p $(builddir)
 	cd $(builddir); lb config $(lbconfigparams)
@@ -19,7 +19,7 @@ $(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot
 $(builddir)/$(builtisoname): $(builddir)/configured_date
 	cd $(builddir); lb build
 
-$(builddir)/$(modifiedisoname): $(builddir)/$(builtisoname) addfilestoiso.sh preseed.cfg rawfilesinstall/etc/skel/.config/dconf/user
+$(builddir)/$(modifiedisoname): $(builddir)/$(builtisoname) addfilestoiso.sh preseed.cfg
 	sh addfilestoiso.sh $(builddir)/$(builtisoname) $(builddir)/$(modifiedisoname)
 
 rawfilesinstall/etc/skel/.config/dconf/user: dconfsettings.d/dashtodocksettings dconfsettings.d/desktopbackgroundsettings
@@ -28,4 +28,4 @@ rawfilesinstall/etc/skel/.config/dconf/user: dconfsettings.d/dashtodocksettings 
 
 clean:
 	rm -rf $(builddir)
-	rm rawfilesinstall/etc/skel/.config/dconf/user
+	rm -f rawfilesinstall/etc/skel/.config/dconf/user
