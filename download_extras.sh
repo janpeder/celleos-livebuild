@@ -15,5 +15,5 @@ mv GeoGebra_48.png rawfilesinstall/usr/share/pixmaps/geogebra.png
 # Download Dash to Dock:
 wget https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip
 mkdir -p rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com
-unzip dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip -d rawfilesinstall/home/elev/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com/
+unzip dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip -d rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com/
 rm dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip
