@@ -8,8 +8,8 @@ modifiedisoname = celleos.iso
 default: $(builddir)/$(modifiedisoname)
 
 $(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot rawfilesinstall/etc/skel/.config/dconf/user
-	lb clean
 	mkdir -p $(builddir)
+	cd $(builddir); lb clean --all
 	cd $(builddir); lb config $(lbconfigparams)
 	cp celleos.list.chroot $(builddir)/config/package-lists/
 	cp wine32.hook.chroot $(builddir)/config/hooks/live
