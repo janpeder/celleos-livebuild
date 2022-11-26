@@ -17,3 +17,12 @@ wget https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v6
 mkdir -p rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com
 unzip dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip -d rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com/
 rm dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip
+
+# Download Mu
+wget https://github.com/mu-editor/mu/releases/download/v1.2.0/MuEditor-Linux-1.2.0-x86_64.AppImage
+mv MuEditor-Linux-1.2.0-x86_64.AppImage rawfilesinstall/opt/
+chmod 755 rawfilesinstall/opt/MuEditor-Linux-1.2.0-x86_64.AppImage
+
+# Download Mu icon
+wget https://user-images.githubusercontent.com/37602/30643992-d27673fe-9e08-11e7-8a93-cb640d397e07.png
+mv 30643992-d27673fe-9e08-11e7-8a93-cb640d397e07.png rawfilesinstall/usr/share/pixmaps/mu.png
