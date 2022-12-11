@@ -7,7 +7,6 @@ case "$response" in
 	cp -R /etc/skel /home/elev
 	chown -R elev /home/elev
 	chgrp -R elev /home/elev
-	chmod -R 700 /home/elev
 	passwd -u -d elev
 	echo "Elevbruker er nullstilt."
         ;;
