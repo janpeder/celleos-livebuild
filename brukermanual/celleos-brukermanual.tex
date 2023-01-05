@@ -1,3 +1,9 @@
+\input texdraw
+\input epsf
+
+\special{papersize=210mm,297.6mm} % A4 paper
+
+
 Brukermanual for Celleos
 
 Skrevet av: Jan Peder David-Andersen (peder.david-andersen@tffk.no)
@@ -48,6 +54,10 @@ Det første du trenger for å installere Celleos er en minnepenn med nødvendig 
 https://www.mediafire.com/folder/y0ff1nlbepsa8/Celleos
 2. Når avbildingsfilen er lastet ned laster du ned og installerer programmet Rufus. Rufus finner du her:
 https://rufus.ie/
+\centerline{
+\epsfxsize 6cm
+\epsffile{bilder/rufus-nedlastning.eps}
+}
 bilde som viser hvor du klikker for å laste ned
 3. Åpne Rufus, som du nettopp lastet ned.
 4. I programmet Rufus velger du .....
@@ -74,7 +84,10 @@ Etter dette skal installasjonsprogrammet for Celleos startes automatisk når min
 
 -Installasjon
 Når du har startet opp installasjonsprogrammet fra minnepenna (se avsnittet over) ser det slik ut:
-bilde av oppstartsskjermbildet.
+\centerline{
+\epsfxsize 9cm
+\epsffile{bilder/celleos-installdialog.eps}
+}
 Trykk ENTER for å gå videre.
 Følg installasjonsveiviseren. Du vil bli spurt om å opprette et root-passord. En root-bruker er det samme som en administrator-bruker. En person som kjenner root-passordet vil også ha alle tilganger på datamaskinen. Det er derfor viktig at du lager et sikkert root-passord, og at du tar godt vare på dette passordet og passer på at uvedkommende ikke får kjennskap til det. 
 
@@ -89,3 +102,4 @@ Administrasjon og bruk av Celleos
 -Hvordan åpne for internettforbindelse
 -Hvordan åpne for USB-enheter
 
+\vfill\eject\bye

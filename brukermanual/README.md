@@ -8,7 +8,7 @@ For å bygge brukermanualen må du først installere nødvendig programvare. Ins
 For å installere de nødvendige programpakkene skriv følgende (som root-bruker):
 ```
 apt update
-apt install build-essential
+apt install build-essential texlive texlive-plain-generic texlive-pictures
 ```
 
 Nå kan du bygge brukermanualen. For å bygge, skriv
