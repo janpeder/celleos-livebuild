@@ -1,0 +1,91 @@
+Brukermanual for Celleos
+
+Skrevet av: Jan Peder David-Andersen (peder.david-andersen@tffk.no)
+Sist endret: 22. desember 2022
+
+Bakgrunn om Celleos og DFS
+I skoleavdelingene i norske fengsler i dag benyttes datasystemet Desktop for Skolen (DFS). Dette er et funksjonelt og sikkert system som gjør det mulig for elever i fengsler å gjøre skolearbeid på datamaskin i skoletiden. DFS gir en begrenset internettilgang, samtidig som det oppfyller nødvendige krav til sikkerhet.
+
+Elever som ønsker å bruke datamaskin til skolearbeid på kveldstid har i utgangspunktet ikke mulighet til dette i norske fengsler. Enkelte fengsler har bestemt lokalt at skoleavdelingene får lov til å dele ut datamaskiner til utvalgte elever. Disse maskinene har elevene på sin celle og de brukes uten tilsyn. Av sikkerhetshensyn er det derfor viktig at det ikke er mulig å kommunisere ved hjelp av disse maskinene.
+
+Celleos er et operativsystem som er utviklet for datamaskiner som elevene har på celle. Formålet med Celleos er at det skal være lett og raskt å installere, at det skal være sikkert og at det skal inneholde den viktigste programvaren som elever har bruk for i en skolesituasjon. Celleos gir ingen mulighet for internettforbindelse eller annen kommunikasjon, da dette ikke lar seg gjøre av sikkerhetshensyn.
+
+-Beskrivelse av funksjonalitet
+Celleos installeres av skolens systemansvarlige ved hjelp av en minnepenn. Selve installasjonsprosessen er automatisert så langt det lar seg gjøre. Etter installasjonen må skolens systemansvarlige sikre maskinen. Dette må gjøres manuelt da det involverer noen fysiske steg, samt noen instillinger i datamaskinens oppsett (BIOS), som ikke kan automatiseres. Når systemet er installert og maskinen er sikret er den klar til utlevering til elev.
+
+Celleos inneholder mye nyttig skolerelatert programvare slik som program for tekstbehandling, presentasjon, regneark, bildebehandling, GeoGebra, programmering i Python, Sketchup og mye annet.
+
+Systemet gjør det umulig å koble maskinen til Internett eller annet nettverk. Systemet har også sperret av USB-tilkoblingene slik at det eneste som går an å koble til er tastatur, mus og skjerm. Det er mulig å sette det opp slik at godkjente minnepenner kan kobles til systemet. Godkjenning av minnepenner baserer seg på VID/PID som er samme prinsippet som DFS bruker.
+
+Celleos er laget for å fungere på nokså gamle datamaskiner. Ettersom PC på celle ikke er en rettighet elevene har, settes det vanligvis ikke av mye penger til dette i skolens budsjett. Derfor er det fint å ha muligheten til å bruke eldre datautstyr til dette. I tillegg sparer man både penger og miljøet ved å gjenbruke datautstyr som ellers ville blitt kastet.
+
+-Teknisk beskrivelse
+Celleos er basert på Debian GNU/Linux. Automatiseringen av installasjonen av Celleos er gjort ved hjelp av verktøyet live-build, som er en del av Debian-prosjektet. Sperring av USB-enheter gjøres med programvaren USBGuard og sperring av nettverksforbindelser gjøres med brannmuren iptables. Mer detaljer om Celleos-prosjektet kan finnes på prosjektet sin github-side:
+https://github.com/janpeder/celleos-livebuild
+
+-Vurdering av sikkerheten
+Trusselbildet i forbindelse med datamaskin på celle går i hovedsak ut på at en elev benytter en slik datamaskin til å kommunisere med andre. Verste tenkelige situasjon er at en domfelt benytter en datamaskin utlevert av skolen til å kontakte fornærmede i sak eller planlegge ny kriminalitet.
+De fleste av scenariene beskrevet under forutsetter at elev har smuglet inn en liten maskinvare-enhet som muliggjør kommunikasjon. Dette kan for eksempel være et modem som muliggjør internettforbindelse over mobilnettet. Slike enheter kan kobles til datamaskinens USB-kontakt, nettverkskontakt eller tilkobles ved hjelp av BlueTooth.
+Se tabellen under for vurdering av sikkerhetstrusler og beskyttelse mot disse.
+
+Sikkerhetstrussel	Beskyttelse mot trussel i Celleos
+Elev benytter trådløst nettverk innebygd i datamaskin til å kommunisere med andre.	En viktig forutsetning for å ivareta sikkerhet er at trådløse nettverkskort må være fysisk fjernet fra datamaskinen før den gis til elev.
+Elev kobler USB-enhet til datamaskinen som gir internettforbindelse (for eksempel et 4G-modem).	Programvare (USBGuard) blokkerer alle USB-enheter unntatt tastatur, mus og lagringsenheter med godkjent produkt-ID (VID/PID). (Godkjenning av USB-lagringsenheter basert på VID/PID benyttes også i DFS.)
+
+I tillegg til dette er all kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur (iptables).
+Elev kobler en liten WiFi-ruter til nettverkskontakt på datamaskin og kommuniserer med andre.	All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur (iptables).
+Elev kobler ekstern nettverksenhet til datamaskinen over Bluetooth og bruker dette til å kommunisere med andre.	All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur (iptables).
+Elev åpner datamaskinen og monterer ny maskinvare som muliggjør kommunikasjon.	Kabinett på datamaskin forsegles med forseglingsteip, slik at det vil vises i ettertid om dette har blitt åpnet av elev.
+Elev installerer nytt operativsystem på datamaskinen og får på denne måten administrator-rettigheter. Deretter tilkobles for eksempel et eksternt trådløst nettverkskort til USB-kontakten for å muliggjøre kommunikasjon.	BIOS/UEFI innstillinger på datamaskinen må endres slik at det ikke er mulig å laste inn operativsystem fra nettverk, USB, CDROM eller andre eksterne medier. Det er viktig å sjekke at dette er gjort før datamaskinen leveres ut til elev.
+Elev åpner datamaskinen og monterer ny harddisk med nytt operativsystem og får på denne måten administrator-rettigheter. Se scenariet over for hvordan administrator-rettigheter kan utnyttes.	Kabinett på datamaskin forsegles med forseglingsteip, slik at det vil vises i ettertid om dette har blitt åpnet av elev.
+
+
+
+Installasjonsveiledning
+-Klargjøre minnepenn for installasjon
+Det første du trenger for å installere Celleos er en minnepenn med nødvendig installasjonsprogramvare. For å lage denne trenger du en minnepenn med minimum 4GB kapasitet og en datamaskin med internettforbindelse. Alt på minnepennen vil bli overskrevet, så sørg for å ta kopi av alt du vil ta vare på før du begynner. Se instruksjon nedenfor.
+1. Besøk følgende lenke og last ned en avbildingsfil for celleos. Dersom det finnes flere versjoner velger du den som har den nyeste datoen i filnavnet.
+https://www.mediafire.com/folder/y0ff1nlbepsa8/Celleos
+2. Når avbildingsfilen er lastet ned laster du ned og installerer programmet Rufus. Rufus finner du her:
+https://rufus.ie/
+bilde som viser hvor du klikker for å laste ned
+3. Åpne Rufus, som du nettopp lastet ned.
+4. I programmet Rufus velger du .....
+Det vil da se omtrent slik ut.
+5. Trykk på "Start" og vent til blabla. Minnepennen er nå klargjort.
+
+-Bakgrunn om UEFI og BIOS
+Datamaskiner er laget slik at når de slås på startes den programvaren som ligger lagret på begynnelsen av maskinens harddisk. Det er slik maskinen finner og starter operativsystemet. Du skal nå endre instillingene i datamaskinen slik at den i stedet starter programvaren på minnepennen. Men før vi går inn på hvordan dette gjøres må det forklares litt mer i detalj om hvordan dette virker.
+
+For at programvare skal fungere på datamskiner fra ulike produsenter må produsentene bli enige om  å gjøre enkelte ting på samme måte. Slik enighet oppnås gjennom at det skrives standardiseringsdokumenter. Måten datamaskinen leter etter programvare når maskinen skrus på er standardisert slik. Hvis dette ikke var standardisert ville vi i verste fall måttet lage ulike installasjonsminnepennener for de ulike merkene - en for Lenovo, en annen for Dell og  en tredje for HP osv. Men takket være standarden virker en minnepenn på alle.
+
+Men riktig så heldige er vi likevel ikke. For på begynnelsen av 2000-tallet ble det klart at standarden som definerte hvordan maskinen skal starte opp var gammel og utdatert og at det var behov for en ny standard. Vi har i dag derfor to ulike standarder. Den nye heter Unified Extensible Firmware Interface (UEFI). Den gamle kalles vanligvis BIOS. 
+
+Celleos bruker BIOS som oppstartsmetode. Dette er for at det skal fungere med gamle datamaskiner som ble laget før UEFI ble vanlig. 
+
+-Klargjøring av datamaskin før installasjon
+For at installasjonsprogrammet på minnepenna skal startes når maskina skrus på, må vi endre instillingene på datamaskina. Maskina må stilles inn på å starte («boote») fra USB og oppstartmodus må være BIOS/Legacy/CSM (ikke UEFI). Fremgangsmåten er ulik på ulike datamaskiner. Her vil jeg beskrive det som er felles for de ulike produsentene. 
+1.	Hvis datamaskinen er på, skru den av.
+2.	Du skal nå starte opp datamaskina og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp på skjermen rett etter at datamaskinen startes, for eksempel kan det stå «Press F2 to enter Setup». De vanligste tastene er enten F1, F2, F10, ENTER eller DEL.
+3.	Du kommer nå til menyen for datamaskinens innstillinger. Ofte finnes det et menyvalg for «boot order» eller tilsvarende. Her er det viktig at USB er først i rekkefølgen.
+4.	Sørg for at oppstartsmodus BIOS er valgt. De ulike produsentene bruker ulike navn for dette. Noen kaller det BIOS, noen kaller det Legacy og noen kaller det Compatibility Support Module (CSM). 
+Etter dette skal installasjonsprogrammet for Celleos startes automatisk når minnepenna står i PCen og maskina skrus på.
+
+
+-Installasjon
+Når du har startet opp installasjonsprogrammet fra minnepenna (se avsnittet over) ser det slik ut:
+bilde av oppstartsskjermbildet.
+Trykk ENTER for å gå videre.
+Følg installasjonsveiviseren. Du vil bli spurt om å opprette et root-passord. En root-bruker er det samme som en administrator-bruker. En person som kjenner root-passordet vil også ha alle tilganger på datamaskinen. Det er derfor viktig at du lager et sikkert root-passord, og at du tar godt vare på dette passordet og passer på at uvedkommende ikke får kjennskap til det. 
+
+-Sikring av datamaskin etter installasjon - VIKTIG
+
+-Sjekkliste før utlevering til elev og loggføring/oversikt over maskiner
+
+Administrasjon og bruk av Celleos
+-Hvordan finne svar på spørsmål relatert til linux, gnome, debian osv
+-Brukeren "root"
+-Nullstille elevbruker i Celleos
+-Hvordan åpne for internettforbindelse
+-Hvordan åpne for USB-enheter
+
