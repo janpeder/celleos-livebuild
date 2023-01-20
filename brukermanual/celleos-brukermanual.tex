@@ -21,24 +21,23 @@
 
 \noindent Skrevet av: Jan Peder David-Andersen ({\tt peder.david-andersen@tffk.no})
 
-\noindent Sist endret: 5. januar 2023
+\noindent Sist endret: 20. januar 2023
 
 \vskip 3pc
 \def\tocwidth{38pc}
 
 \beginsection {\fss Innhold}
 
-
 \hbox to \tocwidth{1. Beskrivelse av l\o sningen \dotfill 2}
 \smallskip
-\hbox to \tocwidth{1.1. Bakgrunn om Celleos og DFS \dotfill 90}
-\hbox to \tocwidth{1.2. Funksjonalitet \dotfill 90}
-\hbox to \tocwidth{1.3. Teknisk beskrivelse \dotfill 90}
-\hbox to \tocwidth{1.4. Vurdering av sikkerheten \dotfill 90}
+\hbox to \tocwidth{1.1. Bakgrunn om Celleos og DFS \dotfill 2}
+\hbox to \tocwidth{1.2. Funksjonalitet \dotfill 2}
+\hbox to \tocwidth{1.3. Teknisk beskrivelse \dotfill 2}
+\hbox to \tocwidth{1.4. Vurdering av sikkerheten \dotfill 2}
 \medskip
-\hbox to \tocwidth{2. Installasjonsveiledning \dotfill 90}
+\hbox to \tocwidth{2. Installasjonsveiledning \dotfill 4}
 \smallskip
-\hbox to \tocwidth{2.1. Klargj\o re minnepenn for installasjon \dotfill 90}
+\hbox to \tocwidth{2.1. Klargj\o re minnepenn for installasjon \dotfill 4}
 \hbox to \tocwidth{2.2. Bakgrunn om UEFI og BIOS \dotfill 90}
 \hbox to \tocwidth{2.3. Klargj\o ring av datamaskin f\o r installasjon \dotfill 90}
 \hbox to \tocwidth{2.4. Installasjon \dotfill 90}
@@ -73,13 +72,13 @@ Celleos er laget for \aa{} fungere p\aa{} noks\aa{} gamle datamaskiner. Ettersom
 \beginsection {\fss 1.3. Teknisk beskrivelse}
 
 Celleos er basert p\aa{} {\it Debian GNU/Linux}. Automatiseringen av installasjonen av Celleos er gjort ved hjelp av verkt\o yet {\it live-build}, som er en del av Debian-prosjektet. Sperring av USB-enheter gj\o res med programvaren {\it USBGuard} og sperring av nettverksforbindelser gj\o res med brannmuren {\it iptables}. Mer detaljer om Celleos-prosjektet kan finnes p\aa{} prosjektet sin {\it github}-side:
-\vskip 8pt
+\smallskip
 \noindent {\tt https://github.com/janpeder/celleos-livebuild}
 
 \beginsection {\fss 1.4. Vurdering av sikkerheten}
 
-Trusselbildet i forbindelse med datamaskin p\aa{} celle g\aa r i hovedsak ut p\aa{} at en elev benytter en slik datamaskin til \aa{} kommunisere med andre. Verste tenkelige situasjon er at en domfelt benytter en datamaskin utlevert av skolen til \aa{} kontakte forn\ae rmede i sak eller planlegge ny kriminalitet.
-De fleste av scenariene beskrevet under forutsetter at elev har smuglet inn en liten maskinvare-enhet som muliggj\o r kommunikasjon. Dette kan for eksempel v\ae re et modem som muliggj\o r internettforbindelse over mobilnettet. Slike enheter kan kobles til datamaskinens USB-kontakt, nettverkskontakt eller tilkobles ved hjelp av BlueTooth. Se tabellen under for vurdering av sikkerhetstrusler og beskyttelse mot disse.
+Trusselbildet forbundet med datamaskin p\aa{} celle g\aa r i hovedsak ut p\aa{} at en elev benytter en slik datamaskin til \aa{} kommunisere med andre. Verste tenkelige situasjon er at en domfelt benytter en datamaskin utlevert av skolen til \aa{} kontakte forn\ae rmede i sak eller planlegge ny kriminalitet.
+Tabellen p\aa{} neste side beskriver ulike hendelser som kan utgj\o re en sikkerhetstrussel, og hvordan Celleos beskytter mot disse. De fleste av hendelsene som er beskrevet forutsetter at det har blitt smuglet inn en liten maskinvare-enhet som muliggj\o r kommunikasjon. Dette kan for eksempel v\ae re et {\it modem} som muliggj\o r internettforbindelse over mobilnettet. Slike enheter kan kobles til datamaskinens USB-kontakt, nettverkskontakt eller tilkobles ved hjelp av {\it BlueTooth}. Se tabellen p\aa{} neste side.
 
 \vfill\eject
 \topglue 1pc
@@ -120,34 +119,34 @@ De fleste av scenariene beskrevet under forutsetter at elev har smuglet inn en l
 \etexdraw}
 }
 
-
 \tablerow{\it Sikkerhetstrussel}{\it Beskyttelse mot trussel i Celleos}
 \smallskip
 \tabletopline
 \tablerow{Elev benytter tr\aa dl\o st nettverk innebygd i datamaskin til \aa{} kommunisere med andre.}{En viktig forutsetning for \aa{} ivareta sikkerhet er at tr\aa dl\o se nettverkskort m\aa{} v\ae re fysisk fjernet fra datamaskinen f\o r den gis til elev.}
-\vskip 2.5pc
+\vskip 2.55pc
 \tablehline
-\tablerow{Elev kobler USB-enhet til datamaskinen som gir internett\-forbindelse (for eksempel et 4G-modem).}{Programvare (USBGuard) blokk\-erer alle USB-enheter unntatt tastatur, mus og lagrings\-enheter med godkjent produkt-ID (VID/PID). (Godkjenning av USB-lagringsenheter basert p\aa{} VID/PID benyttes ogs\aa{} i DFS.) I tillegg til dette er all kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur (iptables).}
-\vskip 6.6pc
+\tablerow{Elev kobler USB-enhet til datamaskinen som gir internett\-forbindelse (for eksempel et {\it 4G-modem\/}).}{Programvare {\it (USBGuard)} blokk\-erer alle USB-enheter unntatt tastatur, mus og lagrings\-enheter med godkjent {\it produkt-ID (VID/PID)}. (Godkjenning av USB-lagringsenheter basert p\aa{} VID/PID benyttes ogs\aa{} i DFS.) I tillegg til dette er all kommunikasjon over IPv4 og IPv6 blokkert ved hjelp av brannmur {\it (iptables)}.}
+\vskip 6.5pc
 \tablehline
-\tablerow{Elev kobler en liten WiFi-ruter til nettverkskontakt p\aa{} datamaskin og kommuniserer med andre.}{All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur (iptables).}
+\tablerow{Elev kobler en liten {\it WiFi-ruter} til nettverkskontakt p\aa{} datamaskin og kommuniserer med andre.}{All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur {\it (iptables)}.}
 \vskip 3.5pc
 \tablehline
-\tablerow{Elev kobler ekstern nettverksenhet til datamaskinen over Bluetooth og bruker dette til \aa{} kommunisere med andre.}{All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur (iptables).}
+\tablerow{Elev kobler ekstern nett\-verks\-enhet til datamaskinen over {\it BlueTooth} og bruker dette til \aa{} kommunisere med andre.}{All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur {\it (iptables)}.}
 \vskip 3.5pc
 \tablehline
-\tablerow{Elev \aa pner datamaskinen og monterer ny maskinvare som muliggj\o r kommunikasjon.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om dette har blitt \aa pnet av elev.}
+\tablerow{Elev \aa pner datamaskinen og monterer ny maskinvare som muliggj\o r kommunikasjon.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskina har blitt \aa pnet av elev.}
 \vskip 2.5pc
 \tablehline
-\tablerow{Elev installerer nytt operativsystem p\aa{} datamaskinen og f\aa r p\aa{} denne m\aa ten administrator-rettigheter. Deretter tilkobles for eksempel et eksternt tr\aa dl\o st nettverkskort til USB-kontakten for \aa{} muliggj\o re kommunikasjon.}{BIOS/UEFI innstillinger p\aa{} datamaskinen m\aa{} endres slik at det ikke er mulig \aa{} laste inn operativsystem fra nettverk, USB, CDROM eller andre eksterne medier. Det er viktig \aa{} sjekke at dette er gjort f\o r datamaskinen leveres ut til elev.}
-\vskip 6.8pc
+\tablerow{Elev installerer nytt operativsystem p\aa{} datamaskinen og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Deretter tilkobles for eksempel et eksternt tr\aa dl\o st nettverkskort til USB-kontakten for \aa{} muliggj\o re kommunikasjon.}{{\it BIOS/UEFI} innstillinger p\aa{} datamaskinen m\aa{} endres slik at det ikke er mulig \aa{} laste inn operativ\-system fra nettverk, USB, CDROM eller andre eksterne medier. Det er viktig at skolen har gode rutiner for kontroll av dette f\o r datamaskinen leveres ut til elev.}
+\vskip 6.5pc
 \tablehline
-\tablerow{Elev \aa pner datamaskinen og monterer ny harddisk med nytt operativsystem og f\aa r p\aa{} denne m\aa ten administrator-rettigheter. Se scenariet over for hvordan administrator-rettigheter kan utnyttes.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om dette har blitt \aa pnet av elev.}
+\tablerow{Elev \aa pner datamaskinen og monterer ny harddisk med nytt operativsystem og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Se hendelsen over for hvordan administrator-rettigheter kan utnyttes.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskina har blitt \aa pnet av elev.}
 \vskip 6.8pc
 \tablebottomline
 
 \vfill\eject
 
+\topglue 1pc
 \beginsection {\fs 2. Installasjonsveiledning}
 
 Celleos installeres ved at man f\o rst laster ned en {\it avbildingsfil} og skriver denne til en minnepenn. Deretter installerer man Celleos ved hjelp av minnepennen. Her f\o lger en detaljert beskrivelse av hvordan dette gj\o res.
@@ -155,24 +154,23 @@ Celleos installeres ved at man f\o rst laster ned en {\it avbildingsfil} og skri
 \beginsection {\fss 2.1. Klargj\o re minnepenn for installasjon}
 
 For \aa{} lage installasjonsminnepennen trenger du en minnepenn med minimum 4GB kapasitet og en datamaskin med internettforbindelse. Alt p\aa{} minnepennen vil bli overskrevet, s\aa{} s\o rg for \aa{} ta kopi av alt du vil ta vare p\aa{} f\o r du begynner. Se instruksjon nedenfor.
-\item{1.} Bes\o k f\o lgende lenke og last ned en avbildingsfil for celleos. Dersom det finnes flere versjoner velger du den som har den nyeste datoen i filnavnet.
+\item{1.} Bes\o k f\o lgende nettadresse og last ned en avbildingsfil for Celleos. Dersom det finnes flere versjoner velger du den som har den nyeste datoen i filnavnet.
+
+\smallskip
+
+{\tt https://www.mediafire.com/folder/y0ff1nlbepsa8/celleos}
 
 \vskip 4pt
 
-{\tt https://www.mediafire.com/folder/y0ff1nlbepsa8/Celleos}
-
-\vskip 4pt
-
-\item{2.} N\aa r avbildingsfilen er lastet ned laster du ned og installerer programmet {\it Rufus}. Rufus finner du her:
-\vskip 4pt
+\item{2.} N\aa r avbildingsfilen er ferdig nedlastet skal du laste ned og installerere programmet {\it Rufus}. Rufus finner du p\aa{}nettadressen under. 
+\smallskip
 {\tt https://rufus.ie/}
-
-\centerline{
+\smallskip
+\item{} For \aa{} finne lenken du skal trykke p\aa{} m\aa{} du rulle nedover p\aa{} nettsiden til du kommer til {\it``Download''}. Se bildet under.
+\smallskip
 \epsfxsize 6cm
 \epsffile{bilder/rufus-nedlastning.eps}
-}
 
-bilde som viser hvor du klikker for \aa{} laste ned
 \item{3.} \AA pne Rufus, som du nettopp lastet ned.
 \item{4.} I programmet Rufus velger du .....
 Det vil da se omtrent slik ut.
