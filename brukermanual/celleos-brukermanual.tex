@@ -10,6 +10,14 @@
 \font\fforfatter=cmr10 at 6pt
 \font\fs=cmbx10 scaled\magstep2
 \font\fss=cmcsc10 scaled\magstep2
+\font\fc=cmr8
+
+\def\imagewithcaption#1#2#3{
+\medskip
+\centerline{
+\vbox{\hbox{\epsfxsize #1 \epsffile{#2}}
+\vskip 2pt
+\hbox{\raise 4pt \vbox{\hsize=#1 \noindent \fc \baselineskip=9pt #3}}}}}
 
 \headline={\ftopptekststor B\kern+0.1pt{\ftopptekst RUKERMANUAL FOR } C\kern+0.1pt{\ftopptekst ELLEOS \hfill Jan Peder David-Andersen, januar 2023}}
 
@@ -38,8 +46,8 @@
 \hbox to \tocwidth{2. Installasjonsveiledning \dotfill 4}
 \smallskip
 \hbox to \tocwidth{2.1. Klargj\o re minnepenn for installasjon \dotfill 4}
-\hbox to \tocwidth{2.2. Bakgrunn om UEFI og BIOS \dotfill 90}
-\hbox to \tocwidth{2.3. Klargj\o ring av datamaskin f\o r installasjon \dotfill 90}
+\hbox to \tocwidth{2.2. Bakgrunn om UEFI og BIOS \dotfill 4}
+\hbox to \tocwidth{2.3. Klargj\o ring av datamaskin f\o r installasjon \dotfill 5}
 \hbox to \tocwidth{2.4. Installasjon \dotfill 90}
 \hbox to \tocwidth{2.5. Sikring av datamaskin etter installasjon \dotfill 90}
 
@@ -134,13 +142,13 @@ Tabellen p\aa{} neste side beskriver ulike hendelser som kan utgj\o re en sikker
 \tablerow{Elev kobler ekstern nett\-verks\-enhet til datamaskinen over {\it BlueTooth} og bruker dette til \aa{} kommunisere med andre.}{All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur {\it (iptables)}.}
 \vskip 3.5pc
 \tablehline
-\tablerow{Elev \aa pner datamaskinen og monterer ny maskinvare som muliggj\o r kommunikasjon.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskina har blitt \aa pnet av elev.}
+\tablerow{Elev \aa pner datamaskinen og monterer ny maskinvare som muliggj\o r kommunikasjon.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskinen har blitt \aa pnet av elev.}
 \vskip 2.5pc
 \tablehline
 \tablerow{Elev installerer nytt operativsystem p\aa{} datamaskinen og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Deretter tilkobles for eksempel et eksternt tr\aa dl\o st nettverkskort til USB-kontakten for \aa{} muliggj\o re kommunikasjon.}{{\it BIOS/UEFI} innstillinger p\aa{} datamaskinen m\aa{} endres slik at det ikke er mulig \aa{} laste inn operativ\-system fra nettverk, USB, CDROM eller andre eksterne medier. Det er viktig at skolen har gode rutiner for kontroll av dette f\o r datamaskinen leveres ut til elev.}
 \vskip 6.5pc
 \tablehline
-\tablerow{Elev \aa pner datamaskinen og monterer ny harddisk med nytt operativsystem og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Se hendelsen over for hvordan administrator-rettigheter kan utnyttes.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskina har blitt \aa pnet av elev.}
+\tablerow{Elev \aa pner datamaskinen og monterer ny harddisk med nytt operativsystem og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Se hendelsen over for hvordan administrator-rettigheter kan utnyttes.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskinen har blitt \aa pnet av elev.}
 \vskip 6.8pc
 \tablebottomline
 
@@ -154,27 +162,18 @@ Celleos installeres ved at man f\o rst laster ned en {\it avbildingsfil} og skri
 \beginsection {\fss 2.1. Klargj\o re minnepenn for installasjon}
 
 For \aa{} lage installasjonsminnepennen trenger du en minnepenn med minimum 4GB kapasitet og en datamaskin med internettforbindelse. Alt p\aa{} minnepennen vil bli overskrevet, s\aa{} s\o rg for \aa{} ta kopi av alt du vil ta vare p\aa{} f\o r du begynner. Se instruksjon nedenfor.
-\item{1.} Bes\o k f\o lgende nettadresse og last ned en avbildingsfil for Celleos. Dersom det finnes flere versjoner velger du den som har den nyeste datoen i filnavnet.
-
+\item{1.} Bes\o k f\o lgende nettadresse og last ned en {\it avbildingsfil} for Celleos. Dersom det finnes flere versjoner velger du den som har den nyeste datoen i filnavnet.
 \smallskip
-
 {\tt https://www.mediafire.com/folder/y0ff1nlbepsa8/celleos}
-
 \vskip 4pt
-
-\item{2.} N\aa r avbildingsfilen er ferdig nedlastet skal du laste ned og installerere programmet {\it Rufus}. Rufus finner du p\aa{}nettadressen under. 
+\item{2.} Avbildingsfilen er stor og nedlastingen kan derfor ta en stund. N\aa r den er ferdig nedlastet skal du laste ned og installerere programmet {\it Rufus}. Rufus finner du p\aa{} nettadressen under. 
 \smallskip
 {\tt https://rufus.ie/}
-\smallskip
-\item{} For \aa{} finne lenken du skal trykke p\aa{} m\aa{} du rulle nedover p\aa{} nettsiden til du kommer til {\it``Download''}. Se bildet under.
-\smallskip
-\epsfxsize 6cm
-\epsffile{bilder/rufus-nedlastning.eps}
-
-\item{3.} \AA pne Rufus, som du nettopp lastet ned.
-\item{4.} I programmet Rufus velger du .....
-Det vil da se omtrent slik ut.
-\item{5.} Trykk p\aa{} "Start" og vent til blabla. Minnepennen er n\aa{} klargjort.
+\imagewithcaption{6cm}{bilder/rufus-nedlastning.eps}{For \aa{} finne lenken du skal trykke p\aa{} m\aa{} du rulle nedover p\aa{} nettsiden.}
+\item{3.} Koble minnepennen du vil bruke til PCens USB-kontakt. {\it (Husk at alt p\aa{} minnepennen vil bli overskrevet.)}
+\item{4.} \AA pne Rufus, som du nettopp lastet ned. Det vil da åpnes et vindu som ser ut som p\aa{} bildet under.
+%\imagewithcaption{8cm}{vcxvxcv
+\item{5.} Trykk p\aa{} ``Start'' og vent til blabla. Minnepennen er n\aa{} klargjort.
 
 \beginsection {\fss 2.2. Bakgrunn om UEFI og BIOS}
 
@@ -188,27 +187,37 @@ Celleos bruker BIOS som oppstartsmetode. Dette er for at det skal fungere med ga
 
 \beginsection {\fss 2.3. Klargj\o ring av datamaskin f\o r installasjon}
 
-For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskina skrus p\aa , m\aa{} vi endre instillingene p\aa{} datamaskina. Maskina m\aa{} stilles inn p\aa{} \aa{} starte (boote) fra USB og oppstartmodus m\aa{} v\ae re {\it BIOS/Legacy/CSM (ikke UEFI)}. Fremgangsm\aa ten er ulik p\aa{} ulike datamaskiner. Her vil jeg beskrive det som er felles for de ulike produsentene. 
+For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen skrus p\aa , m\aa{} vi endre instillingene p\aa{} datamaskinen. Den m\aa{} stilles inn p\aa{} \aa{} starte fra USB og oppstartmodus m\aa{} v\ae re {\it BIOS/Legacy/CSM (ikke UEFI)}. Fremgangsm\aa ten er ulik p\aa{} ulike datamaskiner. Her beskrives det som er felles for de ulike produsentene. 
 \item{1.} Hvis datamaskinen er p\aa, skru den av.
-\item{2.} Du skal n\aa{} starte opp datamaskina og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp p\aa{} skjermen rett etter at datamaskinen startes, for eksempel kan det st\aa{} «Press F2 to enter Setup». De vanligste tastene er enten F1, F2, F10, ENTER eller DEL.
-\item{3.} Du kommer n\aa{} til menyen for datamaskinens innstillinger. Ofte finnes det et menyvalg for ``boot order'' eller tilsvarende. Her er det viktig at USB er f\o rst i rekkef\o lgen.
-\item{4.} S\o rg for at oppstartsmodus BIOS er valgt. De ulike produsentene bruker ulike navn for dette. Noen kaller det {\it BIOS}, noen kaller det {\it Legacy} og noen kaller det {\it Compatibility Support Module (CSM)}. 
-Etter dette skal installasjonsprogrammet for Celleos startes automatisk n\aa r minnepennen st\aa r i PCen og maskina skrus p\aa.
+\item{2.} Du skal n\aa{} starte opp datamaskina og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp p\aa{} skjermen rett etter at datamaskinen startes, for eksempel kan det st\aa{} ``Press F2 to enter Setup''. De vanligste tastene er enten {\it F1}, {\it F2}, {\it F10}, {\it ENTER} eller {\it DEL}.
+\item{3.} N\aa r du har gjort dette kommer du til menyen for datamaskinens innstillinger. 
+\imagewithcaption{8cm}{bilder/maskinoppsett.eps}{Eksempel p\aa{} hvordan menyen for datamaskinens opp\-sett kan se ut. Feltet nederst p\aa{} skjermen viser hvordan man bruker tastaturet for \aa{} navigere i menyen.}
+\item{} I menyen finnes det et menyvalg for ``boot order'' eller tilsvarende. Dette vises gjerne som en prioritert liste. Hver gang datamaskinen skrus p\aa{} leser den lista ovenifra og ned og starter opp den f\o rste programvaren den finner. Du m\aa{} derfor endre rekkef\o lgen slik at USB-enheter er f\o rst er f\o rst i lista.
+\item{4.} S\o rg for at oppstartsmodus BIOS er valgt. De ulike produsentene bruker ulike navn for dette. Noen kaller det {\it BIOS}, noen kaller det {\it Legacy} og noen kaller det {\it Compatibility Support Module (CSM)}.
+\smallskip
+\noindent N\aa r du har utf\o rt alle stegene i lista over skal installasjonsprogrammet for Celleos startes automatisk n\aa r minnepennen st\aa r i PCen og maskinen skrus p\aa.
 
 
 \beginsection {\fss 2.4. Installasjon}
 
-N\aa r du har startet opp installasjonsprogrammet fra minnepennen (se avsnittet over) ser det slik ut:
+\item{1.} N\aa r du setter installasjonsminnepennen (som du lagde i delkapittel 2.1) i datamaskinen og skrur p\aa{} vil du se en advarsel. Hvis du ikke f\aa r opp denne advarselen n\aa r du skrur p\aa{} maskinen er det mulig du har gjort noe galt da du konfigurerte datamaskinen for oppstart fra USB (delkapittel 2.3). 
+\medskip
+\imagewithcaption{8cm}{bilder/celleos-installdialog.eps}{Skjermbilde med advarsel om at alle data p\aa{} datamaskinen vil bli slettet dersom du installerer Celleos.}
 
-\centerline{
-\epsfxsize 9cm
-\epsffile{bilder/celleos-installdialog.eps}
-}
+\item{2.} Trykk {\it ENTER} hvis du er sikker p\aa{} at du vil slette alt p\aa{} maskinen og installere Celleos.
+\item{3.} Etter omtrent et halvt minutt vil du bli bedt om \aa{} opprette et {\it root-passord}:
+\medskip
+\imagewithcaption{8cm}{bilder/root-dialog.eps}{Skjermbilde hvor man blir bedt om \aa{} opprette root-passord.}
 
-Trykk ENTER for \aa{} g\aa{} videre.
-F\o lg installasjonsveiviseren. Du vil bli spurt om \aa{} opprette et root-passord. En root-bruker er det samme som en administrator-bruker. En person som kjenner root-passordet vil ogs\aa{} ha alle tilganger p\aa{} datamaskinen. Det er derfor viktig at du lager et sikkert root-passord, og at du tar godt vare p\aa{} dette passordet og passer p\aa{} at uvedkommende ikke f\aa r kjennskap til det. 
+\item{} En {\it root-bruker} er det samme som en {\it administrator-bruker}. En person som kjenner passordet til root-brukeren har alle tilganger p\aa{} datamaskinen. Det er derfor viktig at du lager et sikkert root-passord, og at du tar godt vare p\aa{} dette passordet og passer p\aa{} at uvedkommende ikke f\aa r kjennskap til det. Skriv inn passordet to ganger og trykk ``Fortsett''.
+\item{4.} Installasjonen tar omtrent 10 minutter. N\aa r den er ferdig tar du ut installasjonsminnepenna, slik at installasjonen ikke startes en gang til n\aa r maskinen omstartes.
 
-\beginsection {\fss 2.5. Sikring av datamaskin etter installasjon}
+\vfill\eject
+\topglue 1pc
+\beginsection {\fs 2.5. Sikring av datamaskin etter installasjon}
+
+Celleos beskytter mot de fleste sikkerhetstruslene som er beskrevet i delkapittel 1.4, men noen av 
+
 
 \beginsection {\fss ? Sjekkliste f\o r utlevering til elev og loggf\o ring/oversikt over maskiner}
 
