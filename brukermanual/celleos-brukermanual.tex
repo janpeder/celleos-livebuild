@@ -13,7 +13,6 @@
 \font\fc=cmr8
 
 \def\imagewithcaption#1#2#3{
-\medskip
 \centerline{
 \vbox{\hbox{\epsfxsize #1 \epsffile{#2}}
 \vskip 2pt
@@ -49,8 +48,9 @@
 \hbox to \tocwidth{2.2. Bakgrunn om UEFI og BIOS \dotfill 4}
 \hbox to \tocwidth{2.3. Klargj\o ring av datamaskin f\o r installasjon \dotfill 5}
 \hbox to \tocwidth{2.4. Installasjon \dotfill 90}
-\hbox to \tocwidth{2.5. Sikring av datamaskin etter installasjon \dotfill 90}
-
+\medskip
+\hbox to \tocwidth{3. Sikring av datamaskin etter installasjon \dotfill 90}
+\smallskip
 \vfill\eject
 
 \topglue 1pc
@@ -163,23 +163,29 @@ Celleos installeres ved at man f\o rst laster ned en {\it avbildingsfil} og skri
 
 For \aa{} lage installasjonsminnepennen trenger du en minnepenn med minimum 4GB kapasitet og en datamaskin med internettforbindelse. Alt p\aa{} minnepennen vil bli overskrevet, s\aa{} s\o rg for \aa{} ta kopi av alt du vil ta vare p\aa{} f\o r du begynner. Se instruksjon nedenfor.
 \item{1.} Bes\o k f\o lgende nettadresse og last ned en {\it avbildingsfil} for Celleos. Dersom det finnes flere versjoner velger du den som har den nyeste datoen i filnavnet.
-\smallskip
+\vskip 1pt
 {\tt https://www.mediafire.com/folder/y0ff1nlbepsa8/celleos}
-\vskip 4pt
-\item{2.} Avbildingsfilen er stor og nedlastingen kan derfor ta en stund. N\aa r den er ferdig nedlastet skal du laste ned og installerere programmet {\it Rufus}. Rufus finner du p\aa{} nettadressen under. 
-\smallskip
+\vskip 1pt
+\item{2.} Avbildingsfilen er stor og nedlastingen kan derfor ta en stund. N\aa r den er ferdig skal du laste ned og installerere programmet {\it Rufus}. Rufus finner du p\aa{} nettadressen under. 
+\vskip 1pt
 {\tt https://rufus.ie/}
-\imagewithcaption{6cm}{bilder/rufus-nedlastning.eps}{For \aa{} finne lenken du skal trykke p\aa{} m\aa{} du rulle nedover p\aa{} nettsiden.}
+\vskip 2pt
+\imagewithcaption{5.5cm}{bilder/rufus-nedlastning.eps}{For \aa{} finne lenken du skal trykke p\aa{} m\aa{} du rulle nedover p\aa{} nettsiden.}
 \item{3.} Koble minnepennen du vil bruke til PCens USB-kontakt. {\it (Husk at alt p\aa{} minnepennen vil bli overskrevet.)}
-\item{4.} \AA pne Rufus, som du nettopp lastet ned. Det vil da åpnes et vindu som ser ut som p\aa{} bildet under.
-%\imagewithcaption{8cm}{vcxvxcv
-\item{5.} Trykk p\aa{} ``Start'' og vent til blabla. Minnepennen er n\aa{} klargjort.
+
+\vfill\eject
+\item{4.} \AA pne Rufus, som du nettopp lastet ned. Programmet Rufus er vist p\aa{} bildet under.
+
+\medskip
+\item{}\hbox{\epsfxsize 6.5cm\epsffile{bilder/rufus.eps}}\hskip 2pt \hbox{\raise 15.5pc \vbox{\hsize=4.5cm \noindent \raggedright \fc \baselineskip=9pt Program\-met Rufus. Trykk p\aa{} (1) for \aa{} velge minne\-pennen du vil bruke. Trykk p\aa{} (2) og velg avbildings\-filen du lastet ned. Trykk p\aa{} (3) for \aa{} skrive avbildings\-filen til minne\-pennen.}}
+
+\item{5.} I vinduet velger du hvilken USB-enhet du vil skrive avbildings\-filen til. S\aa{} velger du at avbildings\-filen du lastet ned er den som skal skrives til minnepennen. Til slutt trykker du p\aa{} ``Start''. Det vil sannsynligvis dukke opp noen dialog\-bokser hvor du f\aa r sp\o rsm\aa l om du er sikker og om det er greit at Rufus laster ned noen filer fra inter\-nett. S\o rg for at du svarer ``Ja'' hvis du blir spurt om dette.
 
 \beginsection {\fss 2.2. Bakgrunn om UEFI og BIOS}
 
 Datamaskiner er laget slik at n\aa r de sl\aa s p\aa{} startes den programvaren som ligger lagret p\aa{} begynnelsen av maskinens harddisk. Det er slik maskinen finner og starter operativsystemet. Du skal n\aa{} endre instillingene i datamaskinen slik at den i stedet starter programvaren p\aa{} minnepennen. Men f\o r vi g\aa r inn p\aa{} hvordan dette gj\o res m\aa{} det forklares litt mer i detalj om hvordan dette virker.
 
-For at programvare skal fungere p\aa{} datamskiner fra ulike produsenter m\aa{} produsentene bli enige om  \aa{} gj\o re enkelte ting p\aa{} samme m\aa te. Slik enighet oppn\aa s gjennom at det skrives {\it standardiseringsdokumenter}. M\aa ten datamaskinen leter etter programvare n\aa r maskinen skrus p\aa{} er standardisert slik. Hvis dette ikke var standardisert ville vi i verste fall m\aa ttet lage ulike installasjonsminnepennener for de ulike merkene - en for Lenovo, en annen for Dell og  en tredje for HP osv. Men takket v\ae re standarden virker en minnepenn p\aa{} alle.
+For at programvare skal fungere p\aa{} datamaskiner fra ulike produsenter m\aa{} produsentene bli enige om  \aa{} gj\o re enkelte ting p\aa{} samme m\aa te. Slik enighet oppn\aa s gjennom at det skrives {\it standardiseringsdokumenter}. M\aa ten datamaskinen leter etter programvare n\aa r maskinen skrus p\aa{} er standardisert slik. Hvis dette ikke var standardisert ville vi i verste fall m\aa ttet lage ulike installasjonsminnepennener for de ulike merkene --- en for Lenovo, en annen for Dell og  en tredje for HP osv. Men takket v\ae re standarden virker en minnepenn p\aa{} alle.
 
 Men riktig s\aa{} heldige er vi likevel ikke. For p\aa{} begynnelsen av 2000-tallet ble det klart at standarden som definerte hvordan maskinen skal starte opp var gammel og utdatert og at det var behov for en ny standard. Vi har i dag derfor to ulike standarder. Den nye heter {\it Unified Extensible Firmware Interface} (UEFI). Den gamle kalles vanligvis {\it BIOS}. 
 
@@ -187,20 +193,22 @@ Celleos bruker BIOS som oppstartsmetode. Dette er for at det skal fungere med ga
 
 \beginsection {\fss 2.3. Klargj\o ring av datamaskin f\o r installasjon}
 
-For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen skrus p\aa , m\aa{} vi endre instillingene p\aa{} datamaskinen. Den m\aa{} stilles inn p\aa{} \aa{} starte fra USB og oppstartmodus m\aa{} v\ae re {\it BIOS/Legacy/CSM (ikke UEFI)}. Fremgangsm\aa ten er ulik p\aa{} ulike datamaskiner. Her beskrives det som er felles for de ulike produsentene. 
+For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen skrus p\aa , m\aa{} vi endre instillingene p\aa{} datamaskinen. Den m\aa{} stilles inn p\aa{} \aa{} starte fra USB og oppstartmodus m\aa{} v\ae re {\it BIOS/Legacy/CSM (ikke UEFI)}. Fremgangsm\aa ten er ulik p\aa{} ulike datamaskiner. Her beskrives det som er felles for de ulike produsentene: 
 \item{1.} Hvis datamaskinen er p\aa, skru den av.
-\item{2.} Du skal n\aa{} starte opp datamaskina og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp p\aa{} skjermen rett etter at datamaskinen startes, for eksempel kan det st\aa{} ``Press F2 to enter Setup''. De vanligste tastene er enten {\it F1}, {\it F2}, {\it F10}, {\it ENTER} eller {\it DEL}.
+\item{2.} Du skal n\aa{} starte opp datamaskinen og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp p\aa{} skjermen rett etter at datamaskinen startes, for eksempel kan det st\aa{} ``Press F2 to enter Setup''. De vanligste tastene er enten {\it F1}, {\it F2}, {\it F10}, {\it ENTER} eller {\it DEL}.
 \item{3.} N\aa r du har gjort dette kommer du til menyen for datamaskinens innstillinger. 
+\medskip
 \imagewithcaption{8cm}{bilder/maskinoppsett.eps}{Eksempel p\aa{} hvordan menyen for datamaskinens opp\-sett kan se ut. Feltet nederst p\aa{} skjermen viser hvordan man bruker tastaturet for \aa{} navigere i menyen.}
 \item{} I menyen finnes det et menyvalg for ``boot order'' eller tilsvarende. Dette vises gjerne som en prioritert liste. Hver gang datamaskinen skrus p\aa{} leser den lista ovenifra og ned og starter opp den f\o rste programvaren den finner. Du m\aa{} derfor endre rekkef\o lgen slik at USB-enheter er f\o rst er f\o rst i lista.
 \item{4.} S\o rg for at oppstartsmodus BIOS er valgt. De ulike produsentene bruker ulike navn for dette. Noen kaller det {\it BIOS}, noen kaller det {\it Legacy} og noen kaller det {\it Compatibility Support Module (CSM)}.
 \smallskip
-\noindent N\aa r du har utf\o rt alle stegene i lista over skal installasjonsprogrammet for Celleos startes automatisk n\aa r minnepennen st\aa r i PCen og maskinen skrus p\aa.
+\noindent N\aa r du har utf\o rt alle stegene i lista over vil installasjonsprogrammet for Celleos startes automatisk n\aa r minnepennen st\aa r i PCen og maskinen skrus p\aa.
 
 
 \beginsection {\fss 2.4. Installasjon}
 
-\item{1.} N\aa r du setter installasjonsminnepennen (som du lagde i delkapittel 2.1) i datamaskinen og skrur p\aa{} vil du se en advarsel. Hvis du ikke f\aa r opp denne advarselen n\aa r du skrur p\aa{} maskinen er det mulig du har gjort noe galt da du konfigurerte datamaskinen for oppstart fra USB (delkapittel 2.3). 
+For \aa{} installere trenger du installasjons\-minnnepennen som du lagde i delkapittel 2.1. For at installasjonen skal starte m\aa{} maskinen v\ae re konfigurert for oppstart fra USB, som du gjorde i delkapittel 2.3. Mesteparten av installasjonen foreg\aa r automatisk. Det eneste man blir spurt om underveis er \aa{} bestemme et {\it root-passord}. Her f\o lger en detaljert instruksjon.
+\item{1.} N\aa r du setter installasjonsminnepennen i datamaskinen og skrur p\aa{} vil du se en advarsel. Hvis du ikke f\aa r opp denne advarselen n\aa r du skrur p\aa{} maskinen er det mulig du har gjort noe galt da du konfigurerte oppstart fra USB (i delkapittel 2.3).
 \medskip
 \imagewithcaption{8cm}{bilder/celleos-installdialog.eps}{Skjermbilde med advarsel om at alle data p\aa{} datamaskinen vil bli slettet dersom du installerer Celleos.}
 
@@ -214,10 +222,13 @@ For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen s
 
 \vfill\eject
 \topglue 1pc
-\beginsection {\fs 2.5. Sikring av datamaskin etter installasjon}
+\beginsection {\fs 3. Sikring av datamaskin etter installasjon}
 
-Celleos beskytter mot de fleste sikkerhetstruslene som er beskrevet i delkapittel 1.4, men noen av 
+Celleos inneholder programvare som forhindrer sikkerhetsbrudd i forbindelse datamaskin p\aa{} fengselscelle. Men det er ikke alle sikkerhetstrusler som det er mulig \aa{} beskytte seg mot ved hjelp av programvare. Dersom en elev kan installere nytt operativsystem p\aa{} maskinen eller kan \aa pne maskinen (og for eksempel bytte ut harddisken), har sikkerhetsfunksjonaliteten i Celleos ikke lenger noen virkning (se vurdering av sikkerheten i delkapittel 1.4). Det er derfor kritisk at IKT driftsansvarlig ved skolen har gode rutiner for \aa{} sikre at slike hendelser ikke skjer. Her forklares hvordan man beskytter mot dette.
 
+\beginsection{\fss 3.1 Sikring av datamaskinens oppsett}
+
+\beginsection{\fss 3.2 Sikring av datamaskinens kabinett}
 
 \beginsection {\fss ? Sjekkliste f\o r utlevering til elev og loggf\o ring/oversikt over maskiner}
 
