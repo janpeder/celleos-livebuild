@@ -45,11 +45,17 @@
 \hbox to \tocwidth{2. Installasjonsveiledning \dotfill 4}
 \smallskip
 \hbox to \tocwidth{2.1. Klargj\o re minnepenn for installasjon \dotfill 4}
-\hbox to \tocwidth{2.2. Bakgrunn om UEFI og BIOS \dotfill 4}
-\hbox to \tocwidth{2.3. Klargj\o ring av datamaskin f\o r installasjon \dotfill 5}
-\hbox to \tocwidth{2.4. Installasjon \dotfill 90}
+\hbox to \tocwidth{2.2. Bakgrunn om UEFI og BIOS \dotfill 6}
+\hbox to \tocwidth{2.3. Klargj\o ring av datamaskin f\o r installasjon \dotfill 6}
+\hbox to \tocwidth{2.4. Installasjon \dotfill 7}
 \medskip
-\hbox to \tocwidth{3. Sikring av datamaskin etter installasjon \dotfill 90}
+\hbox to \tocwidth{3. Sikring av datamaskin etter installasjon \dotfill 8}
+\smallskip
+\hbox to \tocwidth{3.1 Sikring av datamaskinens oppsett \dotfill 8}
+\hbox to \tocwidth{3.2 Sikring av datamaskinens kabinett \dotfill 8}
+\hbox to \tocwidth{3.3 Oversikt over utleverte maskiner \dotfill 8}
+\medskip
+\hbox to \tocwidth{4. Administrasjon og bruk av Celleos \dotfill 9}
 \smallskip
 \vfill\eject
 
@@ -225,26 +231,54 @@ For \aa{} installere trenger du installasjons\-minnnepennen som du lagde i delka
 \imagewithcaption{8cm}{bilder/root-dialog.eps}{Skjermbilde hvor man blir bedt om \aa{} opprette root-passord.}
 \vskip 1pc
 \item{} En {\it root-bruker} er det samme som en {\it administrator-bruker}. En person som kjenner passordet til root-brukeren har alle tilganger p\aa{} datamaskinen. Det er derfor viktig at du lager et sikkert root-passord, og at du tar godt vare p\aa{} dette passordet og passer p\aa{} at uvedkommende ikke f\aa r kjennskap til det. Skriv inn passordet to ganger og trykk ``Fortsett''.
-\item{4.} Installasjonen tar omtrent 10 minutter. N\aa r den er ferdig tar du ut installasjonsminnepenna, slik at installasjonen ikke startes en gang til n\aa r maskinen omstartes.
+\item{4.} Installasjonen tar omtrent 10 minutter. N\aa r den er ferdig tar du ut installasjonsminnepennen, slik at installasjonen ikke startes en gang til n\aa r maskinen omstartes.
 
 \vfill\eject
 \topglue 1pc
 \beginsection {\fs 3. Sikring av datamaskin etter installasjon}
 
-Celleos inneholder programvare som forhindrer sikkerhetsbrudd i forbindelse datamaskin p\aa{} fengselscelle. Men det er ikke alle sikkerhetstrusler som det er mulig \aa{} beskytte seg mot ved hjelp av programvare. Dersom en elev kan installere nytt operativsystem p\aa{} maskinen eller kan \aa pne maskinen (og for eksempel bytte ut harddisken), har sikkerhetsfunksjonaliteten i Celleos ikke lenger noen virkning (se vurdering av sikkerheten i delkapittel 1.4). Det er derfor kritisk at IKT driftsansvarlig ved skolen har gode rutiner for \aa{} sikre at slike hendelser ikke skjer. Her forklares hvordan man beskytter mot dette.
+Celleos inneholder programvare som forhindrer sikkerhetsbrudd i forbindelse datamaskin p\aa{} fengselscelle. Men det er ikke alle sikkerhetstrusler man kan beskytte seg mot ved hjelp av programvare. Dersom en elev kan installere nytt operativsystem p\aa{} maskinen eller kan \aa pne maskinen (og for eksempel bytte ut harddisken), har sikkerhetsfunksjonaliteten i Celleos ikke lenger noen virkning (se vurdering av sikkerheten i delkapittel 1.4). Det er derfor kritisk at IKT driftsansvarlig ved skolen har gode rutiner for \aa{} sikre at slike hendelser ikke skjer. Her forklares hvordan man beskytter mot dette.
 
 \beginsection{\fss 3.1 Sikring av datamaskinens oppsett}
 
+Etter at Celleos er installert m\aa{} datamaskinen sikres for at elev ikke skal kunne installere nytt operativsystem p\aa{} datamaskinen. Dette gj\o res i datamaskinens innstillinger, p\aa{} samme m\aa te som du gjorde i delkapittel~2.3. 
+\item{1.} Start datamaskinen p\aa{} nytt og hold inne den tasten som gj\o r at man kommer til menyen med datamaskinens innstillinger (som beskrevet i 2.3).
+\item{2.} N\aa{} skal du sikre at maskinen ikke laster inn programvare fra minnepenner eller andre eksterne enheter ved oppstart. Menyvalget for dette kalles vanligvis ``boot order'', men ulike produsenter kan bruke ulike navn for dette. Dersom det er mulig \aa{} deaktivere innlasting av programvare fra USB, CDROM og andre eksterne enheter er dette det beste. Hvis ikke dette er mulig m\aa{} du s\o rge for at de eksterne enhetene kommer etter harddisken i rekkef\o lgen. 
+\item{3.} For at ingen skal kunne endre p\aa{} innstillingene m\aa{} du beskytte dem med et passord. I menyen kalles dette vanligvis for et {\it admin-passord}. (Det er fort gjort \aa{} forveksle admin-passord med {\it Power-On Password (POP)}, men sistnevnte m\aa{} skrives inn for \aa{} kunne skru p\aa{} maskinen, og er upraktisk.)
+\item{4.} Kontroll\'er en ekstra gang at oppstartsrekkef\o lgen du har angitt stemmer og at den ikke tillater oppstart fra noen andre enheter enn maskinens interne harddisk.
+\item{5.} Start maskinen p\aa{} nytt og kontroll\'er at det ikke er mulig \aa{} endre maskinens innstillinger uten \aa{} skrive inn admin-passordet.
+
 \beginsection{\fss 3.2 Sikring av datamaskinens kabinett}
 
-\beginsection {\fss ? Sjekkliste f\o r utlevering til elev og loggf\o ring/oversikt over maskiner}
+For at elev ikke skal kunne endre p\aa{} maskinvaren m\aa{} kabinettet sikres. En m\aa te \aa{} gj\o re dette p\aa{} er ved \aa{} forsegle kabinettet slik at det vil vises i ettertid hvis det har blitt \aa pnet. Det anbefales \aa{} avklare med fengslet hva slags utstyr som skal benyttes til dette. I noen fengsler benyttes en bestemt type forseglingsteip, men denne praksisen kan variere fra fengsel til fengsel.
 
-\beginsection {\fss Administrasjon og bruk av Celleos}
+\beginsection {\fss 3.3 Oversikt over utleverte maskiner}
 
--Hvordan finne svar p\aa{} sp\o rsm\aa l relatert til linux, gnome, debian osv
--Brukeren "root"
+Skolens IKT-ansvarlige b\o r s\o rge for \aa{} ha en oversikt over maskinene som skolen leverer ut til elever. Dette kan gj\o res p\aa{} mange ulike m\aa ter, for eksempel ved \aa{} skrive det i et regneark i Excel eller tilsvarende. Nyttig informasjon \aa{} registrere kan v\ae re
+
+\smallskip
+\item{$\circ$} serienummer p\aa{} maskin
+\item{$\circ$} type maskin
+\item{$\circ$} navn p\aa{} elev som har mottat maskinen
+\item{$\circ$} hva root-passordet i operativsystemet er (delkapittel 2.4)
+\item{$\circ$} hva admin-passordet til maskinen er (delkapittel 3.1)
+\item{$\circ$} dato for siste kontroll av maskinoppsett (delkapittel 3.1)
+
+\smallskip
+Ved \aa{} oppbevare denne informasjonen p\aa{} et sikkert sted vet man hvor man finner den n\aa r man trenger den, samtidig som man unng\aa r at den kommer p\aa{} avveie.
+
+\vfill\eject
+
+\topglue 1pc
+
+\beginsection {\fs 4. Administrasjon og bruk av Celleos}
+
 -Nullstille elevbruker i Celleos
+
 -Hvordan \aa pne for internettforbindelse
--Hvordan \aa pne for USB-enheter
+
+-Hvordan \aa pne for USB-enheter, oppsett..
+
+-Hvordan ordne automatisk godkjenning med VID/PID
 
 \vfill\eject\bye
