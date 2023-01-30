@@ -1,4 +1,4 @@
-OUTFILE=celleos-brukermanual
+OUTFILE=celleos
 
 default: $(OUTFILE).pdf
 clean:
