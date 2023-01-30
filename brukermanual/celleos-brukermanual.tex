@@ -3,9 +3,9 @@
 
 \special{papersize=210mm,297.6mm} % A4 paper
 
-\font\ftitteltop=cmcsc10 at 32pt
-\font\ftittelbottom=cmcsc10 at 28pt
-\font\ftopptekst=cmr10 at 6pt
+\font\ftitteltop=cmcsc10 at 50pt
+\font\ftittelbottom=cmcsc10 at 15pt
+\font\ftopptekst=cmcsc10 at 6pt
 \font\ftopptekststor=cmr10 at 7.8pt
 \font\fforfatter=cmr10 at 6pt
 \font\fs=cmbx10 scaled\magstep2
@@ -18,12 +18,13 @@
 \vskip 2pt
 \hbox{\raise 4pt \vbox{\hsize=#1 \noindent \fc \baselineskip=9pt #3}}}}}
 
-\headline={\ftopptekststor B\kern+0.1pt{\ftopptekst RUKERMANUAL FOR } C\kern+0.1pt{\ftopptekst ELLEOS \hfill Jan Peder David-Andersen, januar 2023}}
+%\headline={\ftopptekststor C\kern+0.1pt{\ftopptekst ELLEOS } --- O\kern+0.1pt{\ftopptekst PERATIVSYSTEM FOR PC P\AA{} CELLA \hfill Jan Peder David-Andersen, januar 2023}}
+\headline={\ftopptekst Celleos: Operativsystem for PC p\aa{} cella \hfill \fforfatter Jan Peder David-Andersen, januar 2023}
 
 \topglue 6pc
-\centerline{\ftitteltop Brukermanual}
-\vskip 10pt
-\centerline{\ftittelbottom for Celleos}
+\centerline{\ftitteltop Celleos}
+\vskip 12pt
+\centerline{\ftittelbottom Operativsystem for PC p\aa{} cella}
 \vskip 8pc
 
 \noindent Skrevet av: Jan Peder David-Andersen ({\tt peder.david-andersen@tffk.no})
@@ -89,7 +90,7 @@ Celleos inneholder mye nyttig skolerelatert programvare slik som program for tek
 
 Systemet gj\o r det umulig \aa{} koble maskinen til Internett eller annet nettverk. USB-tilkoblinger blir ogs\aa{} sperret slik at det eneste som g\aa r an \aa{} koble til er tastatur, mus og skjerm. Det er mulig \aa{} sette det opp slik at godkjente minnepenner kan kobles til systemet. Godkjenning av minnepenner baserer seg p\aa{} {\it VID/PID} som er samme prinsippet som DFS bruker.
 
-Celleos er laget for \aa{} fungere p\aa{} noks\aa{} gamle datamaskiner. Ettersom PC p\aa{} celle ikke er en rettighet elevene har, settes det vanligvis ikke av mye penger til dette i skolens budsjett. Derfor er det fint \aa{} ha muligheten til \aa{} bruke eldre datautstyr til dette. I tillegg sparer man b\aa de penger og milj\o et ved \aa{} gjenbruke datautstyr som kanskje ellers ville blitt kastet.
+Celleos er laget for \aa{} fungere p\aa{} noks\aa{} gamle datamaskiner. Ettersom PC p\aa{} celle ikke er en rettighet elevene har, settes det vanligvis ikke av mye penger til dette i skolens budsjett. Derfor er det fint \aa{} ha muligheten til \aa{} bruke eldre datautstyr til dette. Man kan spare b\aa de penger og milj\o et ved \aa{} gjenbruke datautstyr som ellers ville blitt kastet.
 
 \beginsection{\fss 1.3. Teknisk beskrivelse}
 
@@ -156,13 +157,13 @@ Tabellen p\aa{} neste side beskriver ulike hendelser som kan utgj\o re en sikker
 \tablerow{Elev kobler ekstern nett\-verks\-enhet til datamaskinen over {\it BlueTooth} og bruker dette til \aa{} kommunisere med andre.}{All kommunikasjon over IPv4 og IPv6 er blokkert ved hjelp av brannmur {\it (iptables)}.}
 \vskip 3.5pc
 \tablehline
-\tablerow{Elev \aa pner datamaskinen og monterer ny maskinvare som muliggj\o r kommunikasjon.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskinen har blitt \aa pnet av elev.}
+\tablerow{Elev \aa pner datamaskinen og monterer ny maskinvare som muliggj\o r kommunikasjon.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip eller tilsvarende, slik at det vil vises i ettertid om maskinen har blitt \aa pnet av elev.}
 \vskip 2.5pc
 \tablehline
-\tablerow{Elev installerer nytt operativsystem p\aa{} datamaskinen og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Deretter tilkobles for eksempel et eksternt tr\aa dl\o st nettverkskort til USB-kontakten for \aa{} muliggj\o re kommunikasjon.}{{\it BIOS/UEFI} innstillinger p\aa{} datamaskinen m\aa{} endres slik at det ikke er mulig \aa{} laste inn operativ\-system fra nettverk, USB, CDROM eller andre eksterne medier. Det er viktig at skolen har gode rutiner for kontroll av dette f\o r datamaskinen leveres ut til elev.}
+\tablerow{Elev installerer nytt operativsystem p\aa{} datamaskinen og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Deretter tilkobles for eksempel et eksternt tr\aa dl\o st nettverkskort til USB-kontakten for \aa{} muliggj\o re kommunikasjon.}{{\it BIOS/UEFI} innstillinger p\aa{} datam\-askinen m\aa{} endres slik at det ikke er mulig \aa{} laste inn operativ\-system fra nett\-verk, USB, CDROM eller andre eksterne medier. Det er viktig at skolen har gode rutiner for kontroll av dette f\o r data\-maskinen leveres ut til elev.}
 \vskip 6.5pc
 \tablehline
-\tablerow{Elev \aa pner datamaskinen og monterer ny harddisk med nytt operativsystem og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Se hendelsen over for hvordan administrator-rettigheter kan utnyttes.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip, slik at det vil vises i ettertid om maskinen har blitt \aa pnet av elev.}
+\tablerow{Elev \aa pner datamaskinen og monterer ny harddisk med nytt operativsystem og f\aa r p\aa{} denne m\aa ten {\it administrator-rettigheter}. Se hendelsen over for hvordan administrator-rettigheter kan utnyttes.}{Kabinett p\aa{} datamaskin forsegles med forseglings\-teip eller tilsvarende, slik at det vil vises i ettertid om maskinen har blitt \aa pnet av elev.}
 \vskip 6.8pc
 \tablebottomline
 
@@ -216,7 +217,7 @@ Celleos bruker BIOS som oppstartsmetode. Dette er for at det skal fungere med ga
 
 For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen skrus p\aa , m\aa{} vi endre instillingene p\aa{} datamaskinen. Den m\aa{} stilles inn p\aa{} \aa{} starte fra USB og oppstartmodus m\aa{} v\ae re {\it BIOS/Legacy/CSM (ikke UEFI)}. Fremgangsm\aa ten er ulik p\aa{} ulike datamaskiner. Her beskrives det som er felles for de ulike produsentene: 
 \item{1.} Hvis datamaskinen er p\aa, skru den av.
-\item{2.} Du skal n\aa{} starte opp datamaskinen og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp p\aa{} skjermen rett etter at datamaskinen startes, for eksempel kan det st\aa{} ``Press F2 to enter Setup''. De vanligste tastene er enten {\it F1}, {\it F2}, {\it F10}, {\it ENTER} eller {\it DEL}.
+\item{2.} Du skal n\aa{} starte opp datamaskinen og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp p\aa{} skjermen rett etter at datamaskinen startes, for eksempel kan det st\aa{} ``Press F2 to enter Setup''. De vanligste tastene er enten {\it F1}, {\it F2}, {\it F10}, {\it Enter} eller {\it DEL}.
 \item{3.} N\aa r du har gjort dette kommer du til menyen for datamaskinens innstillinger. 
 \medskip
 \imagewithcaption{8cm}{bilder/maskinoppsett.eps}{Eksempel p\aa{} hvordan menyen for datamaskinens opp\-sett kan se ut. Feltet nederst p\aa{} skjermen viser hvordan man bruker tastaturet for \aa{} navigere i menyen.}
@@ -228,12 +229,12 @@ For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen s
 
 \beginsection{\fss 2.4. Installasjon}
 
-For \aa{} installere trenger du installasjons\-minnnepennen som du lagde i delkapittel 2.1. For at installasjonen skal starte m\aa{} maskinen v\ae re konfigurert for oppstart fra USB, som du gjorde i delkapittel 2.3. Mesteparten av installasjonen foreg\aa r automatisk. Det eneste man blir spurt om underveis er \aa{} bestemme et {\it root-passord}. Her f\o lger en detaljert instruksjon.
+For \aa{} installere trenger du installasjons\-minnepennen som du lagde i delkapittel 2.1. For at installasjonen skal starte m\aa{} maskinen v\ae re konfigurert for oppstart fra USB, som du gjorde i delkapittel 2.3. Mesteparten av installasjonen foreg\aa r automatisk. Det eneste man blir spurt om underveis er \aa{} bestemme et {\it root-passord}. Her f\o lger en detaljert instruksjon.
 \item{1.} N\aa r du setter installasjonsminnepennen i datamaskinen og skrur p\aa{} vil du se en advarsel. Hvis du ikke f\aa r opp denne advarselen n\aa r du skrur p\aa{} maskinen er det mulig du har gjort noe galt da du konfigurerte oppstart fra USB (i delkapittel 2.3).
 \vskip 1pc
 \imagewithcaption{8cm}{bilder/celleos-installdialog.eps}{Skjermbilde med advarsel om at alle data p\aa{} datamaskinen vil bli slettet dersom du installerer Celleos.}
 \vskip 1pc
-\item{2.} Trykk {\it ENTER} hvis du er sikker p\aa{} at du vil slette alt p\aa{} maskinen og installere Celleos.
+\item{2.} Trykk {\it Enter} hvis du er sikker p\aa{} at du vil slette alt p\aa{} maskinen og installere Celleos.
 \item{3.} Etter omtrent et halvt minutt vil du bli bedt om \aa{} opprette et {\it root-passord}:
 \vskip 1pc
 \imagewithcaption{8cm}{bilder/root-dialog.eps}{Skjermbilde hvor man blir bedt om \aa{} opprette root-passord.}
@@ -251,8 +252,8 @@ Celleos inneholder programvare som forhindrer sikkerhetsbrudd i forbindelse data
 
 Etter at Celleos er installert m\aa{} datamaskinen sikres for at elev ikke skal kunne installere nytt operativsystem p\aa{} datamaskinen. Dette gj\o res i datamaskinens innstillinger, p\aa{} samme m\aa te som du gjorde i delkapittel~2.3. 
 \item{1.} Start datamaskinen p\aa{} nytt og hold inne den tasten som gj\o r at man kommer til menyen med datamaskinens innstillinger (som beskrevet i 2.3).
-\item{2.} N\aa{} skal du sikre at maskinen ikke laster inn programvare fra minnepenner eller andre eksterne enheter ved oppstart. Menyvalget for dette kalles vanligvis ``boot order'', men ulike produsenter kan bruke ulike navn for dette. Dersom det er mulig \aa{} deaktivere innlasting av programvare fra USB, CDROM og andre eksterne enheter er dette det beste. Hvis ikke dette er mulig m\aa{} du s\o rge for at de eksterne enhetene kommer etter harddisken i rekkef\o lgen. 
-\item{3.} For at ingen skal kunne endre p\aa{} innstillingene m\aa{} du beskytte dem med et passord. I menyen kalles dette vanligvis for et {\it admin-passord}. (Det er fort gjort \aa{} forveksle admin-passord med {\it Power-On Password (POP)}, men sistnevnte m\aa{} skrives inn for \aa{} kunne skru p\aa{} maskinen, og er upraktisk.)
+\item{2.} N\aa{} skal du sikre at maskinen ikke laster inn programvare fra minnepenner eller andre eksterne enheter ved oppstart. Menyvalget for dette kalles vanligvis ``boot order'', men ulike produsenter kan bruke ulike navn for dette. Dersom det er mulig \aa{} {\it deaktivere} innlasting av programvare fra USB, CDROM og andre eksterne enheter er dette det beste. Hvis ikke dette er mulig m\aa{} du s\o rge for at de eksterne enhetene kommer etter harddisken i rekkef\o lgen. 
+\item{3.} For at ingen skal kunne endre p\aa{} innstillingene m\aa{} du beskytte dem med et passord. I menyen kalles dette vanligvis for et {\it admin-passord} (det er fort gjort \aa{} forveksle admin-passord med {\it Power-On Password (POP)}, men sistnevnte m\aa{} skrives inn for \aa{} kunne skru p\aa{} maskinen, og er upraktisk). Bruk et sikkert passord og s\o rg for at ingen uvedkommende f\aa r tak i det.
 \item{4.} Kontroll\'er en ekstra gang at oppstartsrekkef\o lgen du har angitt stemmer og at den ikke tillater oppstart fra noen andre enheter enn maskinens interne harddisk.
 \item{5.} Start maskinen p\aa{} nytt og kontroll\'er at det ikke er mulig \aa{} endre maskinens innstillinger uten \aa{} skrive inn admin-passordet.
 
@@ -262,7 +263,7 @@ For at elev ikke skal kunne endre p\aa{} maskinvaren m\aa{} kabinettet sikres. E
 
 \beginsection{\fss 3.3 Oversikt over utleverte maskiner}
 
-Skolens IKT-ansvarlige b\o r s\o rge for \aa{} ha en oversikt over maskinene som skolen leverer ut til elever. Dette kan gj\o res p\aa{} mange ulike m\aa ter, for eksempel ved \aa{} skrive det i et regneark i Excel eller tilsvarende. Nyttig informasjon \aa{} registrere kan v\ae re
+Skolens IKT-ansvarlige b\o r s\o rge for \aa{} ha en oversikt over maskinene som skolen leverer ut til elever. Dette kan gj\o res p\aa{} ulike m\aa ter, for eksempel ved \aa{} skrive det i et regneark i Excel. Nyttig informasjon \aa{} registrere kan v\ae re
 
 \smallskip
 \item{$\circ$} serienummer p\aa{} maskin
@@ -292,15 +293,19 @@ N\aa r en elev leverer inn en datamaskin kan denne raskt nullstilles slik at den
 
 \imagewithcaption{6cm}{bilder/login.eps}{Innloggingsskjermbildet.}
 \smallskip
-\item{2.} Trykk {\it Ctrl+Alt+F3.} Du f\aa r n\aa{} opp en svart skjerm hvor det st\aa r ``{\tt celleos login:}''. Her skriver du inn brukernavnet ``{\tt root}''. Du blir n\aa{} bedt om passord. Her skal du skrive inn root-passordet.
+\item{2.} Trykk {\it Ctrl+Alt+F3.} Du f\aa r n\aa{} opp en svart skjerm hvor det st\aa r
 
-\item{3.} Det du ser p\aa{} skjermen n\aa{} kalles et {\it kommando\-linje-grense\-snitt}. Her skal du skrive
+\medskip
+{\tt celleos login:}
+\medskip
+
+\item{} Her skriver du inn brukernavnet ``{\tt root}'' og trykker {\it Enter}. Du blir n\aa{} bedt om passord. Her skal du skrive inn root-passordet.
+
+\item{3.} Det du ser p\aa{} skjermen n\aa{} kalles et {\it kommando\-linje-grense\-snitt}. I et kommando\-linje-grense\-snitt skriver brukeren (i dette tilfellet, du) inn tekstlige kommandoer til datamaskinen om hva den skal gj\o re. Etter hver kommando trykker man {\it Enter}. Du skal n\aa{} skrive
 \medskip
 {\tt sh resett\_elevbruker.sh}
 \medskip
-\item{} Og trykke {\it ENTER}.
-\medskip
-\item{4.} Du blir n\aa{} spurt om du er sikker. Tast inn en stor ``J'' for \aa{} bekrefte.
+\item{4.} N\aa r du  blir spurt om du er sikker, taster du stor ``J'' for \aa{} bekrefte.
 
 \item{5.} N\aa r programmet er ferdig skriver du ``{\tt exit}'' for \aa{} logge ut root-brukeren.
 
@@ -311,7 +316,14 @@ N\aa r en elev leverer inn en datamaskin kan denne raskt nullstilles slik at den
 Det finnes to m\aa ter \aa{} f\aa{} tilgang til kommando\-linjen p\aa . Den ene m\aa ten er \aa{} trykke {\it Ctrl+Alt+F3}, slik det ble forklart i delkapittel 4.1. Den andre m\aa ten er \aa{} \aa pne et {\it terminalvindu}. Fordelen med \aa{} bruke et terminalvindu er at det kan gj\o res uten \aa{} g\aa{} ut av det grafiske brukergrensesnittet hvor elevbrukeren er innlogget. (Da vi i delkapittel 4.1 nullstilte elevbrukeren, kunne elevbrukeren ikke v\ae re p\aa logget samtidig som den ble nullstilt, og vi kunne derfor ikke bruke terminalvinduet). For \aa{} f\aa{} root-tilgang i et terminalvindu, gj\o r f\o lgende:
 \item{1.} Logg p\aa{} elevbrukeren hvis den ikke allerede er p\aa logget.
 \item{2.} Trykk p\aa{} knappen {\it ``Vis Programmer''} som er helt til h\o yre p\aa{} programlinjen i bunnen av skjermen (knappen ser ut som ni hvite prikker i et kvadratisk m\o nster).
-\item{3.} N\aa{} f\aa r du se sm\aa{} bilder av programmer som du kan velge mellom. Her kan du bla med rullehjulet p\aa{} musa til du finner programmet ``Terminal'' eller du kan s\o ke etter programmet ved \aa{} skrive inn en og en bokstav fra ordet ``{\tt terminal}'' til programmet kommer opp p\aa{} skjermen. N\aa r du har startet programmet ``Terminal'' kommer det opp et vindu hvor det st\aa r:
+
+\medskip
+\centerline{\baselineskip=9pt \vbox{\hbox{\epsfxsize 5cm \epsffile{bilder/skrivebord-celleos.eps} \epsfxsize 3cm \epsffile{bilder/vis-programmer.eps}}\vskip 1pt \hbox{\vbox{\hsize=8cm \noindent \fc \baselineskip=9pt Trykk p\aa{} symbolet helt til h\o yre p\aa{} programlinjen for \aa{} vise alle programmer.}}}}
+\medskip
+
+
+
+\item{3.} N\aa{} f\aa r du se sm\aa{} bilder av programmer som du kan velge mellom. Her kan du bla med rullehjulet p\aa{} musa til du finner programmet ``Terminal'' eller du bruke s\o kefunksjonen. N\aa r du har startet programmet kommer det opp et vindu hvor det st\aa r:
 \medskip
 {\tt elev@celleos:\~{}\$}
 \medskip
@@ -320,7 +332,7 @@ Det finnes to m\aa ter \aa{} f\aa{} tilgang til kommando\-linjen p\aa . Den ene 
 \medskip
 {\tt su}
 \medskip
-\item{5.} N\aa{} m\aa{} n\aa{} skrive inn root-passordet. N\aa r du har gjort det vil det st\aa{} p\aa{} skjermen:
+\item{5.} N\aa{} blir du bedt om \aa{} skrive inn root-passordet. N\aa r du har gjort det vil det st\aa{} p\aa{} skjermen:
 \medskip
 {\tt root@celleos:/home/elev\#}
 \medskip
@@ -328,15 +340,21 @@ Det finnes to m\aa ter \aa{} f\aa{} tilgang til kommando\-linjen p\aa . Den ene 
 
 \beginsection{\fss 4.3 Midlertidig godkjenne en USB-enhet}
 
-Celleos blokkerer tilkobling for alle USB-enheter unntatt tastatur, mus og minnepenner med godkjent {\it Vendor~ID/Device~ID (VID/PID)}. Hvis du har behov for \aa{} koble til en minnepenn som ikke er godkjent er dette likevel mulig, forutsatt at du kjenner root-passordet. Minnepennen vil da fungere helt til den kobles fra. Hvis samme minnepenn senere skal kobles til igjen m\aa{} denne prosessen gjentas. For permanent godkjenning av USB-enheter, se delkapittel 4.4.
+Celleos blokkerer tilkobling for alle USB-enheter unntatt tastatur, mus og minnepenner med godkjent {\it Vendor~ID/Product~ID (VID/PID)}. Hvis du har behov for \aa{} koble til en minnepenn som ikke er godkjent er dette likevel mulig, forutsatt at du kjenner root-passordet. Minnepennen vil da fungere helt til den kobles fra. Hvis samme minnepenn senere skal kobles til igjen m\aa{} denne prosessen gjentas. For permanent godkjenning av USB-enheter, se delkapittel 4.4.
 \item{1.} Sett minnepennen i datamaskinen.
 \item{2.} \AA pne en kommandolinje og logg inn som ``root'' (se delkapittel 4.2 for forklaring p\aa{} hvordan dette gj\o res).
 \item{3.} Skriv f\o lgende i kommandolinja:
 \medskip
 {\tt usbguard list-devices}
 \medskip
-\item{} Det kommer n\aa{} opp ganske mye tekst p\aa{} skjermen. Hvis du ser n\o ye etter ser du kanskje at all teksten er en slags tabell med informasjon om USB-enheter som er tilkoblet maskinen. Informasjonen er listet opp i rekkef\o lge slik at enheten som ble koblet til sist st\aa r nederst. Den nederste raden kan for eksempel se slik ut:
+\item{} Det kommer n\aa{} opp ganske mye tekst p\aa{} skjermen. Teksten utgj\o r en tabell hvor hver rad gir informasjon om en USB-enhet tilkoblet maskinen. Informasjonen er listet opp i rekkef\o lge slik at enheten som ble koblet til sist st\aa r nederst. Under er et eksempel p\aa{} hvordan dette kan se ut.
+
 \medskip
+\centerline{\epsfxsize 8cm \epsffile{bilder/usbguard-list-devices.eps}}
+\medskip
+
+\item{} P\aa{} raden i den r\o de firkanten i eksemplet st\aa r det:
+\smallskip
 {\tt 11: block id 0951:1643 serial \"{}001CC0EC3471F090D60013C5\"{} name \"{}DataTraveler G3\"{}{} [\dots]}
 \medskip
 \item{4. } Tallet {\tt 11} er programvaren {\it USBGuard} sitt kjennetegn for denne enheten (USBGuard er navnet p\aa{} programvaren som blokkerer USB-enheter i Celleos). Vi ser at minnepennen har navnet ``DataTraveler G3''. Hvis det ser ut til at enhet nummer 11 er den du \o nsker \aa{} koble til maskinen, skriver du:
@@ -352,11 +370,11 @@ Celleos blokkerer tilkobling for alle USB-enheter unntatt tastatur, mus og minne
 
 Midlertidig godkjenning av USB-enheter er nyttig i enkelte tilfeller, men for daglig bruk er det upraktisk. I tillegg utgj\o r det en sikkerhetsrisiko at man m\aa{} bruke root-passordet ofte, fordi det \o ker sannsynligheten for at uvedkommende f\aa r tak i det. En bedre l\o sning er \aa{} konfigurere permanent godkjenning av en minnepenn.
 
-Nedenfor beskrives stegvis hvordan man kan permanent godkjenne en minnepenn p\aa{} en bestemt datamaskin. Hvis man i stedet \o nsker at en minnepenn skal v\ae re godkjent p\aa{} {\it alle} maskiner man installerer Celleos p\aa{} er dette ogs\aa{} mulig. Det er faktisk slik det er tenkt at Celleos skal brukes, da godkjenning av enheter p\aa{} hver enkelt maskin kan bli b\aa de uoversiktlig og strevsomt.
+Nedenfor beskrives stegvis hvordan man permanent kan godkjenne en minnepenn p\aa{} en bestemt datamaskin. Hvis man i stedet \o nsker at en minnepenn skal v\ae re godkjent p\aa{} {\it alle} maskiner man installerer Celleos p\aa{} er dette ogs\aa{} mulig. Det er faktisk slik det er tenkt at Celleos skal brukes, da godkjenning av enheter p\aa{} hver enkelt maskin kan bli b\aa de uoversiktlig og strevsomt.
 
-Det er da mulig \aa{} f\aa{} laget en skreddersydd {\it avbildingsfil} for installasjon, som inneholder ferdig oppsett med godkjenning av den/de aktuelle minnepennen(e). Hvis du \o nsker dette kan du f\o lge stegene 1--4 i instruksjonen nedenfor, slik at du finner ut {\it Vendor~ID/Device~ID (VID/PID)\/} for enheten(e) du vil godkjenne. Deretter sender du en epost til undertegnede (epost-adresse finner du p\aa{} f\o rste side i dette dokumentet) og ber om \aa{} f\aa{} laget en skreddersydd avbildingsfil. Eposten m\aa{} inneholdet VID/PID for enhetene(e) du \o nsker at skal v\ae re godkjent. 
+Det er da mulig \aa{} f\aa{} laget en skreddersydd {\it avbildingsfil} for installasjon, som inneholder ferdig oppsett med godkjenning av den/de aktuelle minnepennen(e). Hvis du \o nsker dette kan du f\o lge stegene 1--4 i instruksjonen nedenfor, slik at du finner ut {\it Vendor~ID/Product~ID (VID/PID)\/} for enheten(e) du vil godkjenne. Deretter sender du en epost til undertegnede (epost-adresse finner du p\aa{} f\o rste side i dette dokumentet) og ber om \aa{} f\aa{} laget en skreddersydd avbildingsfil. Eposten m\aa{} inneholde VID/PID for enhetene(e) du \o nsker at skal v\ae re godkjent. 
 
-Under f\o lger instruksjonen for hvordan du kan godkjenne en minnepenn permanent p\aa{} en datamaskin. Hvis du kun er interessert i \aa{} finne ut hva som er VID/PID for en USB-enhet hopper du av etter steg 4.
+Under f\o lger instruksjonen for hvordan du kan godkjenne en minnepenn permanent p\aa{} \'en datamaskin. Hvis du kun er interessert i \aa{} finne ut hva som er VID/PID for en USB-enhet stopper du etter steg 4.
 
 \item{1.} Sett minnepennen i datamaskinen.
 \item{2.} \AA pne en kommandolinje og logg inn som ``root'' (se delkapittel 4.2 for forklaring p\aa{} hvordan dette gj\o res).
@@ -381,10 +399,22 @@ Under f\o lger instruksjonen for hvordan du kan godkjenne en minnepenn permanent
 \medskip
 {\tt allow id one-of $\{$ 0951:1643 0951:1284 0246:0573 $\}$ with-interface equals $\{$ 08:*:* $\}$ }
 \medskip
-\item{7.} N\aa r du er ferdig \aa{} endre konfigurasjonen trykker du {\it Ctrl+X}. Du blir spurt om \aa{} lagre, trykk ``J''. N\aa r blir du spurt om filnavn, trykk {\it ENTER}.
-\item{8.} Start maskina p\aa{} nytt. USB-enheter med godkjent VID/PID skal n\aa{} fungere p\aa{} denne maskina.
+\item{7.} N\aa r du er ferdig \aa{} endre konfigurasjonen trykker du {\it Ctrl+X}. Du blir spurt om \aa{} lagre, trykk ``J''. N\aa r blir du spurt om filnavn, trykk {\it Enter}.
 
+\item{8.} Start maskinen p\aa{} nytt. USB-enheter med godkjent VID/PID skal n\aa{} fungere p\aa{} denne maskinen.
+
+\vfill\eject
 
 \beginsection{\fss 4.5 Midlertidig deaktivere brannmur}
 
+Dersom det skulle v\ae re behov for det g\aa r det an \aa{} deaktivere brannmuren i Celleos midlertidig. Dette kan for eksempel v\ae re nyttig hvis man trenger \aa{} installere programvare som m\aa{} lastes ned fra Internett. Brannmuren vil bli aktivert igjen etter at maskinen startes p\aa{} nytt. 
+\item{1.} \AA pne en kommandolinje og logg inn som ``root'' (se delkapittel 4.2 for forklaring p\aa{} hvordan dette gj\o res).
+\item{2.} Skriv inn f\o lgende tre kommandoer etter hverandre:
+\medskip
+{\tt iptables -P INPUT ACCEPT}\break
+\indent{\tt iptables -P OUTPUT ACCEPT}\break
+\indent{\tt iptables -P FORWARD ACCEPT}\break
+\indent{\tt exit}
+\medskip
+\item{} Brannmuren er n\aa{} midlertidig deaktivert for trafikk over IP versjon 4 (IPv4). Dersom du har behov for \aa{} bruke IP versjon 6 (IPv6) m\aa{} du bruke kommandoen {\tt ip6tables} i stedet for {\tt iptables}.
 \vfill\eject\bye
