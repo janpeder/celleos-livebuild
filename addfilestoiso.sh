@@ -54,6 +54,7 @@ cp $cddir/boot/grub/grub.cfg $cddir/boot/grub/grub.cfg.old
 cp grub.cfg $cddir/boot/grub/grub.cfg
 cp splash.png $cddir/isolinux/
 cp splash.png $cddir/boot/grub/
+cp build/configured_date $cddir/celleos_build_date
 
 # Remove the checksums as they are no longer valid
 rm -f $cddir/sha256sum.txt
