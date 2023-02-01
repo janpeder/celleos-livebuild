@@ -15,6 +15,7 @@ $(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot rawfilesinst
 	cp wine32.hook.chroot $(builddir)/config/hooks/live
 	cp -R rawfilesinstall/* $(builddir)/config/includes.chroot_after_packages/
 	date > $(builddir)/configured_date
+	cp $(builddir)/configured_date $(builddir)/config/includes.chroot_after_packages/root/celleos_build_date
 
 $(builddir)/$(builtisoname): $(builddir)/configured_date
 	cd $(builddir); lb build
