@@ -84,9 +84,9 @@ Celleos er et operativsystem som er utviklet for datamaskiner som elevene har p\
 
 \beginsection{\fss 1.2. Funksjonalitet}
 
-Celleos installeres av skolens systemansvarlige ved hjelp av en minnepenn. Selve installasjonsprosessen er automatisert s\aa{} langt det lar seg gj\o re. Etter installasjonen m\aa{} skolens systemansvarlige sikre maskinen. Dette m\aa{} gj\o res manuelt da det involverer noen fysiske steg, samt noen instillinger i datamaskinens oppsett, som ikke kan automatiseres. N\aa r systemet er installert og maskinen er sikret er den klar til utlevering til elev.
+Celleos installeres av skolens systemansvarlige ved hjelp av en minnepenn. Selve installasjonsprosessen er automatisert s\aa{} langt det lar seg gj\o re. Etter installasjonen m\aa{} skolens systemansvarlige sikre maskinen. Dette m\aa{} gj\o res manuelt da det involverer noen fysiske steg, samt noen innstillinger i datamaskinens oppsett, som ikke kan automatiseres. N\aa r systemet er installert og maskinen er sikret er den klar til utlevering til elev.
 
-Celleos inneholder mye nyttig skolerelatert programvare slik som program for tekstbehandling, presentasjon, regneark, bildebehandling, {\it GeoGebra}, programmering i {\it Python}, {\it Sketchup} og mye annet.
+Celleos inneholder mye nyttig skolerelatert programvare slik som program for tekstbehandling, presentasjon, regneark, bildebehandling, {\it GeoGebra}, programmering i {\it Python}, {\it SketchUp} og mye annet.
 
 Systemet gj\o r det umulig \aa{} koble maskinen til Internett eller annet nettverk. USB-tilkoblinger blir ogs\aa{} sperret slik at det eneste som g\aa r an \aa{} koble til er tastatur, mus og skjerm. Det er mulig \aa{} sette det opp slik at godkjente minnepenner kan kobles til systemet. Godkjenning av minnepenner baserer seg p\aa{} {\it VID/PID} som er samme prinsippet som DFS bruker.
 
@@ -181,7 +181,7 @@ For \aa{} lage installasjonsminnepennen trenger du en minnepenn med minimum 4GB 
 \vskip 1pt
 {\tt https://www.mediafire.com/folder/y0ff1nlbepsa8/celleos}
 \vskip 1pt
-\item{2.} Avbildingsfilen er stor og nedlastingen kan derfor ta en stund. N\aa r den er ferdig skal du laste ned og installerere programmet {\it Rufus}. Rufus finner du p\aa{} nettadressen under. 
+\item{2.} Avbildingsfilen er stor og nedlastingen kan derfor ta en stund. N\aa r den er ferdig skal du laste ned og installere programmet {\it Rufus}. Rufus finner du p\aa{} nettadressen under. 
 \vskip 1pt
 {\tt https://rufus.ie/}
 \vskip 1.5pc
@@ -205,9 +205,9 @@ For \aa{} lage installasjonsminnepennen trenger du en minnepenn med minimum 4GB 
 
 \beginsection{\fss 2.2. Bakgrunn om UEFI og BIOS}
 
-Datamaskiner er laget slik at n\aa r de sl\aa s p\aa{} startes den programvaren som ligger lagret p\aa{} begynnelsen av maskinens harddisk. Det er slik maskinen finner og starter operativsystemet. Du skal n\aa{} endre instillingene i datamaskinen slik at den i stedet starter programvaren p\aa{} minnepennen. Men f\o r vi g\aa r inn p\aa{} hvordan dette gj\o res m\aa{} det forklares litt mer i detalj om hvordan dette virker.
+Datamaskiner er laget slik at n\aa r de sl\aa s p\aa{} startes den programvaren som ligger lagret p\aa{} begynnelsen av maskinens harddisk. Det er slik maskinen finner og starter operativsystemet. Du skal n\aa{} endre innstillingene i datamaskinen slik at den i stedet starter programvaren p\aa{} minnepennen. Men f\o r vi g\aa r inn p\aa{} hvordan dette gj\o res m\aa{} det forklares litt mer i detalj om hvordan dette virker.
 
-For at programvare skal fungere p\aa{} datamaskiner fra ulike produsenter m\aa{} produsentene bli enige om  \aa{} gj\o re enkelte ting p\aa{} samme m\aa te. Slik enighet oppn\aa s gjennom at det skrives {\it standardiseringsdokumenter}. M\aa ten datamaskinen leter etter programvare n\aa r maskinen skrus p\aa{} er standardisert slik. Hvis dette ikke var standardisert ville vi i verste fall m\aa ttet lage ulike installasjonsminnepennener for de ulike merkene --- en for Lenovo, en annen for Dell og  en tredje for HP osv. Men takket v\ae re standarden virker en minnepenn p\aa{} alle.
+For at programvare skal fungere p\aa{} datamaskiner fra ulike produsenter m\aa{} produsentene bli enige om  \aa{} gj\o re enkelte ting p\aa{} samme m\aa te. Slik enighet oppn\aa s gjennom at det skrives {\it standardiseringsdokumenter}. M\aa ten datamaskinen leter etter programvare n\aa r maskinen skrus p\aa{} er standardisert slik. Hvis dette ikke var standardisert ville vi i verste fall m\aa ttet lage ulike installasjonsminnepenner for de ulike merkene --- en for Lenovo, en annen for Dell og  en tredje for HP osv. Men takket v\ae re standarden virker en minnepenn p\aa{} alle.
 
 Men riktig s\aa{} heldige er vi likevel ikke. For p\aa{} begynnelsen av 2000-tallet ble det klart at standarden som definerte hvordan maskinen skal starte opp var gammel og utdatert og at det var behov for en ny standard. Vi har i dag derfor to ulike standarder. Den nye heter {\it Unified Extensible Firmware Interface} (UEFI). Den gamle kalles vanligvis {\it BIOS}. 
 
@@ -215,7 +215,7 @@ Celleos bruker BIOS som oppstartsmetode. Dette er for at det skal fungere med ga
 
 \beginsection{\fss 2.3. Klargj\o ring av datamaskin f\o r installasjon}
 
-For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen skrus p\aa , m\aa{} vi endre instillingene p\aa{} datamaskinen. Den m\aa{} stilles inn p\aa{} \aa{} starte fra USB og oppstartmodus m\aa{} v\ae re {\it BIOS/Legacy/CSM (ikke UEFI)}. Fremgangsm\aa ten er ulik p\aa{} ulike datamaskiner. Her beskrives det som er felles for de ulike produsentene: 
+For at installasjonsprogrammet p\aa{} minnepennen skal startes n\aa r maskinen skrus p\aa , m\aa{} vi endre innstillingene p\aa{} datamaskinen. Den m\aa{} stilles inn p\aa{} \aa{} starte fra USB og oppstartmodus m\aa{} v\ae re {\it BIOS/Legacy/CSM (ikke UEFI)}. Fremgangsm\aa ten er ulik p\aa{} ulike datamaskiner. Her beskrives det som er felles for de ulike produsentene: 
 \item{1.} Hvis datamaskinen er p\aa, skru den av.
 \item{2.} Du skal n\aa{} starte opp datamaskinen og holde inne en bestemt tast. Hvilken tast du skal holde inne varierer avhengig av produsent. Det kommer vanligvis opp p\aa{} skjermen rett etter at datamaskinen startes, for eksempel kan det st\aa{} ``Press F2 to enter Setup''. De vanligste tastene er enten {\it F1}, {\it F2}, {\it F10}, {\it Enter} eller {\it DEL}.
 \item{3.} N\aa r du har gjort dette kommer du til menyen for datamaskinens innstillinger. 
@@ -250,7 +250,7 @@ Celleos inneholder programvare som forhindrer sikkerhetsbrudd i forbindelse data
 
 \beginsection{\fss 3.1 Sikring av datamaskinens oppsett}
 
-Etter at Celleos er installert m\aa{} datamaskinen sikres for at elev ikke skal kunne installere nytt operativsystem p\aa{} datamaskinen. Dette gj\o res i datamaskinens innstillinger, p\aa{} samme m\aa te som du gjorde i delkapittel~2.3. 
+Etter at Celleos er installert m\aa{} datamaskinen sikres for at elev ikke skal kunne installere nytt operativsystem p\aa{} datamaskinen. Dette gj\o res i datamaskinens innstillinger, og fremgangsm\aa ten ligner p\aa{} det du gjorde i delkapittel~2.3. 
 \item{1.} Start datamaskinen p\aa{} nytt og hold inne den tasten som gj\o r at man kommer til menyen med datamaskinens innstillinger (som beskrevet i 2.3).
 \item{2.} N\aa{} skal du sikre at maskinen ikke laster inn programvare fra minnepenner eller andre eksterne enheter ved oppstart. Menyvalget for dette kalles vanligvis ``boot order'', men ulike produsenter kan bruke ulike navn for dette. Dersom det er mulig \aa{} {\it deaktivere} innlasting av programvare fra USB, CDROM og andre eksterne enheter er dette det beste. Hvis ikke dette er mulig m\aa{} du s\o rge for at de eksterne enhetene kommer etter harddisken i rekkef\o lgen. 
 \item{3.} For at ingen skal kunne endre p\aa{} innstillingene m\aa{} du beskytte dem med et passord. I menyen kalles dette vanligvis for et {\it admin-passord} (det er fort gjort \aa{} forveksle admin-passord med {\it Power-On Password (POP)}, men sistnevnte m\aa{} skrives inn for \aa{} kunne skru p\aa{} maskinen, og er upraktisk). Bruk et sikkert passord og s\o rg for at ingen uvedkommende f\aa r tak i det.
@@ -268,7 +268,7 @@ Skolens IKT-ansvarlige b\o r s\o rge for \aa{} ha en oversikt over maskinene som
 \smallskip
 \item{$\circ$} serienummer p\aa{} maskin
 \item{$\circ$} type maskin
-\item{$\circ$} navn p\aa{} elev som har mottat maskinen
+\item{$\circ$} navn p\aa{} elev som har mottatt maskinen
 \item{$\circ$} hva root-passordet i operativsystemet er (delkapittel 2.4)
 \item{$\circ$} hva admin-passordet til maskinen er (delkapittel 3.1)
 \item{$\circ$} dato for siste kontroll av maskinoppsett (delkapittel 3.1)
@@ -307,13 +307,13 @@ N\aa r en elev leverer inn en datamaskin kan denne raskt nullstilles slik at den
 \medskip
 \item{4.} N\aa r du  blir spurt om du er sikker, taster du stor ``J'' for \aa{} bekrefte.
 
-\item{5.} N\aa r programmet er ferdig skriver du ``{\tt exit}'' for \aa{} logge ut root-brukeren.
+\item{5.} N\aa r programmet er ferdig skriver du ``{\tt exit}'' for \aa{} logge ut root-brukeren. Dette er viktig for \aa{} forhindre at noen kan g\aa{} rundt sikkerheten i Celleos.
 
 \item{6.} Trykk {\it Ctrl+Alt+F1} for \aa{} g\aa{} tilbake til inn\-loggings\-skjerm\-bildet. Elev\-brukeren er n\aa{} nullstilt.
 
 \beginsection{\fss 4.2 Root-tilgang i Terminal}
 
-Det finnes to m\aa ter \aa{} f\aa{} tilgang til kommando\-linjen p\aa . Den ene m\aa ten er \aa{} trykke {\it Ctrl+Alt+F3}, slik det ble forklart i delkapittel 4.1. Den andre m\aa ten er \aa{} \aa pne et {\it terminalvindu}. Fordelen med \aa{} bruke et terminalvindu er at det kan gj\o res uten \aa{} g\aa{} ut av det grafiske brukergrensesnittet hvor elevbrukeren er innlogget. (Da vi i delkapittel 4.1 nullstilte elevbrukeren, kunne elevbrukeren ikke v\ae re p\aa logget samtidig som den ble nullstilt, og vi kunne derfor ikke bruke terminalvinduet). For \aa{} f\aa{} root-tilgang i et terminalvindu, gj\o r f\o lgende:
+Det finnes to m\aa ter \aa{} f\aa{} tilgang til kommando\-linjen p\aa . Den ene m\aa ten er \aa{} trykke {\it Ctrl+Alt+F3}, slik det ble forklart i delkapittel 4.1. Den andre m\aa ten er \aa{} \aa pne et {\it terminalvindu}. Fordelen med \aa{} bruke et terminalvindu er at det kan gj\o res uten \aa{} g\aa{} ut av det grafiske brukergrensesnittet hvor elevbrukeren er innlogget (da vi i delkapittel 4.1 nullstilte elevbrukeren, kunne elevbrukeren ikke v\ae re p\aa logget samtidig som den ble nullstilt, og vi kunne derfor ikke bruke terminalvinduet). For \aa{} f\aa{} root-tilgang i et terminalvindu, gj\o r f\o lgende:
 \item{1.} Logg p\aa{} elevbrukeren hvis den ikke allerede er p\aa logget.
 \item{2.} Trykk p\aa{} knappen {\it ``Vis Programmer''} som er helt til h\o yre p\aa{} programlinjen i bunnen av skjermen (knappen ser ut som ni hvite prikker i et kvadratisk m\o nster).
 
@@ -399,7 +399,7 @@ Under f\o lger instruksjonen for hvordan du kan godkjenne en minnepenn permanent
 \medskip
 {\tt allow id one-of $\{$ 0951:1643 0951:1284 0246:0573 $\}$ with-interface equals $\{$ 08:*:* $\}$ }
 \medskip
-\item{7.} N\aa r du er ferdig \aa{} endre konfigurasjonen trykker du {\it Ctrl+X}. Du blir spurt om \aa{} lagre, trykk ``J''. N\aa r blir du spurt om filnavn, trykk {\it Enter}.
+\item{7.} N\aa r du er ferdig \aa{} endre konfigurasjonen trykker du {\it Ctrl+X}. N\aa r du blir spurt om \aa{} lagre, trykk ``J''. N\aa r blir du spurt om filnavn, trykk {\it Enter}.
 
 \item{8.} Start maskinen p\aa{} nytt. USB-enheter med godkjent VID/PID skal n\aa{} fungere p\aa{} denne maskinen.
 
@@ -413,7 +413,10 @@ Dersom det skulle v\ae re behov for det g\aa r det an \aa{} deaktivere brannmure
 \medskip
 {\tt iptables -P INPUT ACCEPT}\break
 \indent{\tt iptables -P OUTPUT ACCEPT}\break
-\indent{\tt iptables -P FORWARD ACCEPT}\break
+\indent{\tt iptables -P FORWARD ACCEPT}
+\medskip
+\item{} Til slutt logger du ut ved \aa{} skrive
+\medskip
 \indent{\tt exit}
 \medskip
 \item{} Brannmuren er n\aa{} midlertidig deaktivert for trafikk over IP versjon 4 (IPv4). Dersom du har behov for \aa{} bruke IP versjon 6 (IPv6) m\aa{} du bruke kommandoen {\tt ip6tables} i stedet for {\tt iptables}.
