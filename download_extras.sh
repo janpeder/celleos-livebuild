@@ -26,3 +26,19 @@ chmod 755 rawfilesinstall/opt/MuEditor-Linux-1.2.0-x86_64.AppImage
 # Download Mu icon
 wget https://user-images.githubusercontent.com/37602/30643992-d27673fe-9e08-11e7-8a93-cb640d397e07.png
 mv 30643992-d27673fe-9e08-11e7-8a93-cb640d397e07.png rawfilesinstall/usr/share/pixmaps/mu.png
+
+# Download and build libdvdcss (for DVD decryption)
+INSTALLPATH=$(pwd)/rawfilesinstall/opt
+DOWNLOADURL=https://get.videolan.org/libdvdcss/1.4.2/libdvdcss-1.4.2.tar.bz2
+ARCHIVEFILE=libdvdcss-1.4.2.tar.bz2 
+DIRECTORY=libdvdcss-1.4.2/
+mkdir -p $INSTALLPATH
+wget $DOWNLOADURL
+tar xvfj $ARCHIVEFILE
+cd $DIRECTORY
+./configure --prefix=$INSTALLPATH
+make || exit
+make install || exit
+cd ..
+rm -r $DIRECTORY
+rm $ARCHIVEFILE
