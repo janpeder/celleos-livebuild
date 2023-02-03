@@ -28,7 +28,7 @@ wget https://user-images.githubusercontent.com/37602/30643992-d27673fe-9e08-11e7
 mv 30643992-d27673fe-9e08-11e7-8a93-cb640d397e07.png rawfilesinstall/usr/share/pixmaps/mu.png
 
 # Download and build libdvdcss (for DVD decryption)
-INSTALLPATH=$(pwd)/rawfilesinstall/opt
+INSTALLPATH=$(pwd)/rawfilesinstall/usr/local
 DOWNLOADURL=https://get.videolan.org/libdvdcss/1.4.2/libdvdcss-1.4.2.tar.bz2
 ARCHIVEFILE=libdvdcss-1.4.2.tar.bz2 
 DIRECTORY=libdvdcss-1.4.2/
