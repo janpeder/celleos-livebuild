@@ -14,3 +14,9 @@ rm rawfilesinstall/opt/MuEditor-Linux-1.2.0-x86_64.AppImage
 
 # Delete Mu icon:
 rm rawfilesinstall/usr/share/pixmaps/mu.png
+
+# Delete libdvdcss
+rm -rf rawfilesinstall/usr/local/include/dvdcss
+rm -f rawfilesinstall/usr/local/lib/libdvdcss*
+rm -f rawfilesinstall/usr/local/lib/pkgconfig/libdvdcss.pc
+rm -rf rawfilesinstall/usr/local/share/doc/libdvdcss
