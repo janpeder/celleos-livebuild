@@ -1,10 +1,6 @@
 *~
 *#
-rawfilesinstall/opt/geogebra/
-rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/
 build/
-rawfilesinstall/etc/skel/.config/dconf/user
-rawfilesinstall/usr/share/pixmaps/geogebra.png
 brukermanual/celleos.p*
 brukermanual/celleos.d*
 brukermanual/celleos.l*
