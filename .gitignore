@@ -1,6 +1,7 @@
 *~
 *#
 build/
+rawfilesinstall/etc/skel/.config/dconf/user
 brukermanual/celleos.p*
 brukermanual/celleos.d*
 brukermanual/celleos.l*
