@@ -5,3 +5,10 @@ rawfilesinstall/etc/skel/.config/dconf/user
 brukermanual/celleos.p*
 brukermanual/celleos.d*
 brukermanual/celleos.l*
+rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com/
+rawfilesinstall/opt/geogebra/
+rawfilesinstall/usr/share/pixmaps/geogebra.png
+rawfilesinstall/usr/local/include/dvdcss/
+rawfilesinstall/usr/local/lib/libdvdcss.*
+rawfilesinstall/usr/local/lib/pkgconfig/libdvdcss.pc
+rawfilesinstall/usr/local/share/doc/libdvdcss/
