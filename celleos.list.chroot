@@ -8,6 +8,8 @@ default-jdk
 emacs
 task-gnome-desktop
 libreoffice
+libreoffice-l10n-nb
+libreoffice-l10n-nn
 vlc
 aisleriot
 stockfish
