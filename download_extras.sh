@@ -33,3 +33,8 @@ make install || exit
 cd ..
 rm -r $DIRECTORY
 rm $ARCHIVEFILE
+
+# Download Visual Studio Code:
+mkdir -p standalone-debs
+wget -O standalone-debs/code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+dpkg-name standalone-debs/code.deb

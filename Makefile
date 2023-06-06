@@ -9,12 +9,14 @@ default: $(builddir)/$(modifiedisoname)
 
 $(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot rawfilesinstall/etc/skel/.config/dconf/user
 	rm -rf $(builddir)/config/includes.chroot_after_packages/*
+	rm -f $(builddir)/config/packages.chroot/*.deb
 	mkdir -p $(builddir)
 	cd $(builddir); lb clean --all
 	cd $(builddir); lb config $(lbconfigparams)
 	cp celleos.list.chroot $(builddir)/config/package-lists/
 	cp wine32.hook.chroot $(builddir)/config/hooks/live
 	cp -R rawfilesinstall/* $(builddir)/config/includes.chroot_after_packages/
+	cp standalone-debs/*.deb $(builddir)/config/packages.chroot/ 2>/dev/null
 	date > $(builddir)/configured_date
 	cp $(builddir)/configured_date $(builddir)/config/includes.chroot_after_packages/root/celleos_build_date
 
