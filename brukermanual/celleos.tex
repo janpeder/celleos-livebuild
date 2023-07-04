@@ -303,7 +303,7 @@ N\aa r en elev leverer inn en datamaskin kan denne raskt nullstilles slik at den
 
 \item{3.} Det du ser p\aa{} skjermen n\aa{} kalles et {\it kommando\-linje-grense\-snitt}. I et kommando\-linje-grense\-snitt skriver brukeren (i dette tilfellet, du) inn tekstlige kommandoer til datamaskinen om hva den skal gj\o re. Etter hver kommando trykker man {\it Enter}. Du skal n\aa{} skrive
 \medskip
-{\tt sh resett\_elevbruker.sh}
+{\tt resett\_elevbruker}
 \medskip
 \item{4.} N\aa r du  blir spurt om du er sikker, taster du stor ``J'' for \aa{} bekrefte.
 
@@ -320,8 +320,6 @@ Det finnes to m\aa ter \aa{} f\aa{} tilgang til kommando\-linjen p\aa . Den ene 
 \medskip
 \centerline{\baselineskip=9pt \vbox{\hbox{\epsfxsize 5cm \epsffile{bilder/skrivebord-celleos.eps} \epsfxsize 3cm \epsffile{bilder/vis-programmer.eps}}\vskip 1pt \hbox{\vbox{\hsize=8cm \noindent \fc \baselineskip=9pt Trykk p\aa{} symbolet helt til h\o yre p\aa{} programlinjen for \aa{} vise alle programmer.}}}}
 \medskip
-
-
 
 \item{3.} N\aa{} f\aa r du se sm\aa{} bilder av programmer som du kan velge mellom. Her kan du bla med rullehjulet p\aa{} musa til du finner programmet ``Terminal'' eller du bruke s\o kefunksjonen. N\aa r du har startet programmet kommer det opp et vindu hvor det st\aa r:
 \medskip
@@ -409,15 +407,13 @@ Under f\o lger instruksjonen for hvordan du kan godkjenne en minnepenn permanent
 
 Dersom det skulle v\ae re behov for det g\aa r det an \aa{} deaktivere brannmuren i CelleOS midlertidig. Dette kan for eksempel v\ae re nyttig hvis man trenger \aa{} installere programvare som m\aa{} lastes ned fra Internett. Brannmuren vil bli aktivert igjen etter at maskinen startes p\aa{} nytt. 
 \item{1.} \AA pne en kommandolinje og logg inn som ``root'' (se delkapittel 4.2 for forklaring p\aa{} hvordan dette gj\o res).
-\item{2.} Skriv inn f\o lgende tre kommandoer etter hverandre:
+\item{2.} Skriv inn f\o lgende kommando (bare mulig for {\it root}-brukeren):
 \medskip
-{\tt iptables -P INPUT ACCEPT}\break
-\indent{\tt iptables -P OUTPUT ACCEPT}\break
-\indent{\tt iptables -P FORWARD ACCEPT}
+{\tt apne\_internett}
 \medskip
 \item{} Til slutt logger du ut ved \aa{} skrive
 \medskip
 \indent{\tt exit}
 \medskip
-\item{} Brannmuren er n\aa{} midlertidig deaktivert for trafikk over IP versjon 4 (IPv4). Dersom du har behov for \aa{} bruke IP versjon 6 (IPv6) m\aa{} du bruke kommandoen {\tt ip6tables} i stedet for {\tt iptables}.
+\item{} Brannmuren er n\aa{} midlertidig deaktivert og vil aktiveres igjen n\aa r maskina startes p\aa{} nytt.
 \vfill\eject\bye
