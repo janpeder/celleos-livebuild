@@ -12,4 +12,4 @@ rawfilesinstall/usr/local/include/dvdcss/
 rawfilesinstall/usr/local/lib/libdvdcss.*
 rawfilesinstall/usr/local/lib/pkgconfig/libdvdcss.pc
 rawfilesinstall/usr/local/share/doc/libdvdcss/
-standalone-debs/code*.deb
+standalone-debs/*

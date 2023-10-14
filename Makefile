@@ -16,7 +16,7 @@ $(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot rawfilesinst
 	cp celleos.list.chroot $(builddir)/config/package-lists/
 	cp wine32.hook.chroot $(builddir)/config/hooks/live
 	cp -R rawfilesinstall/* $(builddir)/config/includes.chroot_after_packages/
-	cp standalone-debs/*.deb $(builddir)/config/packages.chroot/ 2>/dev/null
+	[ -d "standalone-debs" ] && cp standalone-debs/*.deb $(builddir)/config/packages.chroot/ 2>/dev/null
 	date > $(builddir)/configured_date
 	cp $(builddir)/configured_date $(builddir)/config/includes.chroot_after_packages/root/celleos_build_date
 
