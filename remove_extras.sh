@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Delete GeoGebra:
-rm -r rawfilesinstall/opt/geogebra
+rm -rf rawfilesinstall/opt/geogebra
 
 # Delete GeoGebra icon:
-rm rawfilesinstall/usr/share/pixmaps/geogebra.png
+rm -f rawfilesinstall/usr/share/pixmaps/geogebra.png
 
 # Delete Dash to Dock:
-rm -r rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com
+rm -rf rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com
 
 # Delete libdvdcss
 rm -rf rawfilesinstall/usr/local/include/dvdcss
@@ -17,3 +17,6 @@ rm -rf rawfilesinstall/usr/local/share/doc/libdvdcss
 
 # Delete Visual Studio Code
 rm -f standalone-debs/code*.deb
+
+# Delete IdeaMaker:
+rm -f standalone-debs/ideaMaker*.deb

@@ -38,3 +38,9 @@ rm dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip
 mkdir -p standalone-debs
 wget -O standalone-debs/code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 dpkg-name standalone-debs/code.deb
+
+# Download IdeaMaker:
+mkdir -p standalone-debs
+cd standalone-debs
+wget https://download.raise3d.com/ideamaker/release/4.3.3/ideaMaker_4.3.3.6560-ubuntu_amd64.deb
+cd ..
