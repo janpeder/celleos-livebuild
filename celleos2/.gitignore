@@ -1,9 +1,9 @@
 *~
 *#
 build/
-rawfilesinstall/etc/skel/.config/dconf/user
+to-target-root/etc/skel/.config/dconf/user
 brukermanual/celleos.p*
 brukermanual/celleos.d*
 brukermanual/celleos.l*
-rawfilesinstall/opt/geogebra/
+to-target-root/opt/geogebra/
 standalone-debs/
