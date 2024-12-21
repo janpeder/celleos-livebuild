@@ -2,16 +2,16 @@
 
 # Download GeoGebra:
 wget https://download.geogebra.org/package/linux-port
-mkdir -p rawfilesinstall/opt
-tar xvfj linux-port -C rawfilesinstall/opt/
+mkdir -p to-target-root/opt
+tar xvfj linux-port -C to-target-root/opt/
 rm linux-port
-mv rawfilesinstall/opt/GeoGebra* rawfilesinstall/opt/geogebra
+mv to-target-root/opt/GeoGebra* to-target-root/opt/geogebra
 
 # Download GeoGebra icon:
 # Not working. GeoGebra icon is added to git repo instead.
 #wget https://wiki.geogebra.org/uploads/c/cc/GeoGebra_48.png
-#mkdir -p rawfilesinstall/usr/share/pixmaps
-#mv GeoGebra_48.png rawfilesinstall/usr/share/pixmaps/geogebra.png
+#mkdir -p to-target-root/usr/share/pixmaps
+#mv GeoGebra_48.png to-target-root/usr/share/pixmaps/geogebra.png
 
 # Download Jan
 mkdir -p standalone-debs
