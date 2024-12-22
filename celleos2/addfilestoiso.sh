@@ -63,7 +63,7 @@ rm -f $cddir/md5sum.txt
 rm -f $cddir/md5sum.README
 
 # Create iso
-genisoimage -o $output -r -J -T -V "celleos-install" -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat -eltorito-alt-boot -e efiboot.img -no-emul-boot ./$cddir
+genisoimage -o $output -r -J -T -V "celleos-install" -udf -allow-limited-size -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat -eltorito-alt-boot -e efiboot.img -no-emul-boot ./$cddir
 
 # Make it a bootable disk image
 # (If we dont do this it will only be bootable if burned to a physical CD)
