@@ -7,7 +7,7 @@ modifiedisoname = celleos.iso
 
 default: $(builddir)/$(modifiedisoname)
 
-$(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot to-target-root/etc/skel/.config/dconf/user
+$(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot rawfilesinstall/etc/skel/.config/dconf/user
 	rm -rf $(builddir)/config/includes.chroot_after_packages/*
 	rm -f $(builddir)/config/packages.chroot/*.deb
 	mkdir -p $(builddir)
@@ -15,7 +15,7 @@ $(builddir)/configured_date: celleos.list.chroot wine32.hook.chroot to-target-ro
 	cd $(builddir); lb config $(lbconfigparams)
 	cp celleos.list.chroot $(builddir)/config/package-lists/
 	cp wine32.hook.chroot $(builddir)/config/hooks/live
-	cp -R to-target-root/* $(builddir)/config/includes.chroot_after_packages/
+	cp -R rawfilesinstall/* $(builddir)/config/includes.chroot_after_packages/
 	[ -d "standalone-debs" ] && cp standalone-debs/*.deb $(builddir)/config/packages.chroot/ 2>/dev/null
 	date > $(builddir)/configured_date
 	cp $(builddir)/configured_date $(builddir)/config/includes.chroot_after_packages/root/celleos_build_date
@@ -26,10 +26,10 @@ $(builddir)/$(builtisoname): $(builddir)/configured_date
 $(builddir)/$(modifiedisoname): $(builddir)/$(builtisoname) addfilestoiso.sh preseed.cfg menu.cfg grub.cfg
 	sh addfilestoiso.sh $(builddir)/$(builtisoname) $(builddir)/$(modifiedisoname)
 
-to-target-root/etc/skel/.config/dconf/user: dconfsettings.d/extensions dconfsettings.d/desktopbackgroundsettings dconfsettings.d/favoriteappssettings
-	mkdir -p to-target-root/etc/skel/.config/dconf
-	dconf compile to-target-root/etc/skel/.config/dconf/user dconfsettings.d
+rawfilesinstall/etc/skel/.config/dconf/user: dconfsettings.d/extensions dconfsettings.d/desktopbackgroundsettings dconfsettings.d/favoriteappssettings
+	mkdir -p rawfilesinstall/etc/skel/.config/dconf
+	dconf compile rawfilesinstall/etc/skel/.config/dconf/user dconfsettings.d
 
 clean:
 	rm -rf $(builddir)
-	rm -f to-target-root/etc/skel/.config/dconf/user
+	rm -f rawfilesinstall/etc/skel/.config/dconf/user
