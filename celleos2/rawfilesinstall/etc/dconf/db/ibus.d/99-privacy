@@ -2,4 +2,4 @@
 # Det er lurt fordi Gnome sin måte å bruke USBGuard på er masete
 # (og usikker)
 [org.gnome.desktop.privacy]
-usb-protection=false
+usb-protection='false'
