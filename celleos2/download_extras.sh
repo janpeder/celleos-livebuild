@@ -8,16 +8,15 @@ rm linux-port
 mv rawfilesinstall/opt/GeoGebra* rawfilesinstall/opt/geogebra
 
 # Download GeoGebra icon:
-# Not working. GeoGebra icon is added to git repo instead.
 #wget https://wiki.geogebra.org/uploads/c/cc/GeoGebra_48.png
 #mkdir -p rawfilesinstall/usr/share/pixmaps
 #mv GeoGebra_48.png rawfilesinstall/usr/share/pixmaps/geogebra.png
 
-# Download Jan
-mkdir -p standalone-debs
-wget -O standalone-debs/jan.deb "https://github.com/janhq/jan/releases/download/v0.5.11/jan-linux-amd64-0.5.11.deb"
-dpkg-name standalone-debs/jan.deb
-
+# Download Dash to Dock:
+wget https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip
+mkdir -p rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com
+unzip dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip -d rawfilesinstall/etc/skel/.local/share/gnome-shell/extensions/dash-to-dock\@micxgx.gmail.com/
+rm dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip
 
 # Download Visual Studio Code:
 mkdir -p standalone-debs
