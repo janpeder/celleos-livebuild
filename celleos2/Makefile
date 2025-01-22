@@ -26,7 +26,7 @@ $(builddir)/$(builtisoname): $(builddir)/configured_date
 $(builddir)/$(modifiedisoname): $(builddir)/$(builtisoname) addfilestoiso.sh preseed.cfg menu.cfg grub.cfg
 	sh addfilestoiso.sh $(builddir)/$(builtisoname) $(builddir)/$(modifiedisoname)
 
-to-target-root/etc/skel/.config/dconf/user: dconfsettings.d/favorite-apps
+to-target-root/etc/skel/.config/dconf/user: dconfsettings.d/extensions dconfsettings.d/desktopbackgroundsettings dconfsettings.d/favoriteappssettings
 	mkdir -p to-target-root/etc/skel/.config/dconf
 	dconf compile to-target-root/etc/skel/.config/dconf/user dconfsettings.d
 
