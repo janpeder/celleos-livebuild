@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Delete GeoGebra:
-rm -rf to-target-root/opt/geogebra
+rm -rf rawfilesinstall/opt/geogebra
 
 # Delete Jan:
 rm -f standalone-debs/jan*.deb
